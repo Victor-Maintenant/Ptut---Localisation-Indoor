@@ -20,4 +20,5 @@ public class Galerie {
     private String adresse;
     
     // TODO : Mettre en oeuvre la relation oneToMany vers Exposition
+    // Test Commit Julia
 }
