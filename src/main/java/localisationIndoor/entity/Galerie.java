@@ -1,4 +1,4 @@
-package galerie.entity;
+package localisationIndoor.entity;
 import javax.persistence.*;
 import lombok.*;
 

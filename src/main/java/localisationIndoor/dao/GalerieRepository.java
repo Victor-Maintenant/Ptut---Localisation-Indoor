@@ -1,7 +1,7 @@
-package galerie.dao;
+package LocalisationIndoor.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import galerie.entity.Galerie;
+import localisationIndoor.entity.Galerie;
 
 // This will be AUTO IMPLEMENTED by Spring 
 

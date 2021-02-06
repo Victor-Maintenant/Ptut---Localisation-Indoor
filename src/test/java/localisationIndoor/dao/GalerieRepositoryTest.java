@@ -1,6 +1,6 @@
-package galerie.dao;
+package localisationIndoor.dao;
 
-import galerie.entity.Galerie;
+import localisationIndoor.entity.Galerie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.context.jdbc.Sql;
-import galerie.dao.GalerieRepository;
+import LocalisationIndoor.dao.GalerieRepository;
 
 @Log4j2 // Génère le 'logger' pour afficher les messages de trace
 @DataJpaTest
