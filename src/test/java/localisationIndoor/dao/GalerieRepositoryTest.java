@@ -1,6 +1,5 @@
-package localisationIndoor.dao;
+/*package localisationIndoor.dao;
 
-import localisationIndoor.entity.Galerie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
@@ -28,4 +27,4 @@ public class GalerieRepositoryTest {
         assertEquals(combienDansLeJeuDeTest, nombre, "On doit trouver 1 galerie" );
     }
 
-}
+}*/
