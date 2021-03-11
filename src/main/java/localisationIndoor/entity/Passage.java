@@ -1,19 +1,27 @@
 package localisationIndoor.entity;
 import java.sql.Date;
+import java.time.LocalDate;
+
 import javax.persistence.*;
 import lombok.*;
 /**
  *
  * @author Victor Maintenant
  */
-@Entity @Table(uniqueConstraints = {
-    @UniqueConstraint(columnNames = {"id_Telephone", "id_Balise"})
-})
+@Entity 
+@Getter @Setter @NoArgsConstructor @RequiredArgsConstructor @ToString
 public class Passage {
-    @Id @ManyToOne
+    @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    private Integer id;
+
+    @ManyToOne
+    @NonNull
     private Telephone telephone;
-    @Id @ManyToOne
+
+    @ManyToOne
+    @NonNull
     private Balise balise;
-    @Column 
-    private Date date_Passage;
+
+    private LocalDate when = LocalDate.now();
+
 }
