@@ -22,6 +22,6 @@ public class Passage {
     @NonNull
     private Balise balise;
 
-    private LocalDate when = LocalDate.now();
+    private LocalDate A = LocalDate.now();
 
 }

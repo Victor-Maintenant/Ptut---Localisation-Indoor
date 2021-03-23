@@ -16,6 +16,8 @@ public class Batiment {
     @Column @NonNull
     private String adresse;
     
+    @ManyToOne
+    private Ville ville;
     
     @OneToMany(mappedBy = "batiment")
     private List<Plan> plans;
