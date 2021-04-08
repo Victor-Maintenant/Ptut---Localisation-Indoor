@@ -14,6 +14,6 @@ public class Type_Personne {
     @Column @NonNull
     private String libelle;
     
-    @OneToMany(mappedBy = "type")
+    @OneToMany
     private List<Personne> personnes;
 }

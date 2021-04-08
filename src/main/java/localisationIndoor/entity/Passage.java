@@ -23,5 +23,5 @@ public class Passage {
     private Balise balise;
 
     private LocalDate A = LocalDate.now();
-
+    
 }

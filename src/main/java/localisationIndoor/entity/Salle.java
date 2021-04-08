@@ -13,6 +13,11 @@ public class Salle {
     private Integer id_Salle;
     @Column @NonNull
     private String num;
+    @Column @ NonNull
+    private int maxPer;
+    
+    @ManyToOne
+    private Batiment batiment;
     
     @OneToMany(mappedBy = "salle")
     private List<Balise> balises;

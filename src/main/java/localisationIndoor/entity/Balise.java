@@ -12,6 +12,10 @@ public class Balise {
     private Integer id_Balise;
     @Column @NonNull
     private String num;
+    @Column 
+    private double coor_x;
+    @Column 
+    private double coor_y;
     
     @ManyToOne
     private Salle salle;
