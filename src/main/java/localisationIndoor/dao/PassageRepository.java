@@ -16,5 +16,5 @@ public interface PassageRepository extends JpaRepository<Passage, Integer> {
             + "Group by id_Salle",
             nativeQuery = true)
     public int getNbPersonneDansChaqueSalle(int id);
-
+    
 }

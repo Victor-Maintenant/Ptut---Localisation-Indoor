@@ -12,7 +12,7 @@ public interface SalleRepository extends JpaRepository<Salle, Integer> {
     public List<Integer> getIdSalle(); 
     
     @Query(
-            value = "SELECT maxPer FROM SALLE WHERE id_Salle = :id",
+            value = "SELECT max_Per FROM SALLE WHERE id_Salle = :id",
             nativeQuery = true)
     public int getNbMaxPersonneSalle(int id); 
 }
