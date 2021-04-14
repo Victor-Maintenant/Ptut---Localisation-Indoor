@@ -71,6 +71,7 @@ a:hover {
 }
 
 input[type="button"] {
+    outline-style: none;
     display: inline-block;
     background-color: #0195f8;
     border-radius: 15px;
