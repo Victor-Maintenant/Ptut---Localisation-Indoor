@@ -15,4 +15,9 @@ public class Telephone {
     
     @OneToOne
     private Personne personne;
+
+    public Telephone(int id, String num) {
+        this.id_Telephone = id;
+        this.num = num;
+    }
 }

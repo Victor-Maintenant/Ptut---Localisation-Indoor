@@ -11,7 +11,7 @@ public class Plan {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Integer id_Plan;
     
-    @NonNull
+    @Column @NonNull
     private String plan;
 
     @NonNull
