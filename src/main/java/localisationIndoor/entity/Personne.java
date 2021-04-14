@@ -1,5 +1,4 @@
 package localisationIndoor.entity;
-import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 
@@ -12,7 +11,7 @@ import lombok.*;
 public class Personne {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Integer id_Personne;
-    @Column @NonNull
+    @Column 
     private String nom;
     @Column @NonNull
     private String prenom;

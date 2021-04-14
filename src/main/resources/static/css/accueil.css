@@ -69,17 +69,15 @@ nav>ul li:hover .sous {
     text-align: center;
 }
 
+.active {
+    background-color: #2266c075;
+    color: white;
+}
+
 a:hover {
     background-color: #016bb3;
     color: white;
-    -webkit-color: white;
-    -moz-color: white;
     text-decoration: none;
-}
-
-a:active {
-    background-color: #2266c075;
-    color: white;
 }
 
 input[type="button"] {
