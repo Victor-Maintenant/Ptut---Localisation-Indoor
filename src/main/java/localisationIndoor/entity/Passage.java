@@ -1,17 +1,24 @@
 package localisationIndoor.entity;
-import java.sql.Date;
-import java.time.LocalDate;
+
+import java.time.LocalDateTime;
 
 import javax.persistence.*;
 import lombok.*;
+
 /**
  *
  * @author Victor Maintenant
  */
-@Entity 
-@Getter @Setter @NoArgsConstructor @RequiredArgsConstructor @ToString
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@RequiredArgsConstructor
+@ToString
 public class Passage {
-    @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @ManyToOne
@@ -22,6 +29,33 @@ public class Passage {
     @NonNull
     private Balise balise;
 
-    private LocalDate A = LocalDate.now();
+    private LocalDateTime A = LocalDateTime.now();
+
+    public Passage(int id, Telephone t, Balise b, LocalDateTime time) {
+        this.id = id;
+        this.telephone = t;
+        this.balise = b;
+        this.A = time;
+    }
+
+    public LocalDateTime getA(){
+        return this.A;
+    }
     
+    public void addPassageDansBalise(){
+        this.balise.getPassages().add(this);
+    }
+    public int getNbPersonneDansChaqueSalle(int id){
+        int nbPer = 0; 
+        for(Passage passage : this.balise.getPassages()){
+            if (passage.balise.getSalle().getId_Salle() == id){
+                if( passage.getA().isBefore(LocalDateTime.now())){
+                   if((passage.getA().isAfter(LocalDateTime.now().minusMinutes(5)))){
+                       nbPer += 1;
+                    } 
+                }
+            }
+        }
+        return nbPer;
+    }
 }

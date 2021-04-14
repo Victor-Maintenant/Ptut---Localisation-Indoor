@@ -1,4 +1,6 @@
 package localisationIndoor.entity;
+import java.time.LocalDateTime;
+import java.util.*;
 import javax.persistence.*;
 import lombok.*;
 /**
@@ -19,4 +21,12 @@ public class Balise {
     
     @ManyToOne
     private Salle salle;
+    
+    @OneToMany(mappedBy = "balise")
+    List<Passage> passages = new LinkedList<>();
+
+    public Balise(int id, Salle s) {
+        this.id_Balise = id;
+        this.salle = s;
+    }
 }

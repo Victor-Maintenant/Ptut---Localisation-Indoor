@@ -21,4 +21,8 @@ public class Salle {
     
     @OneToMany(mappedBy = "salle")
     private List<Balise> balises;
+    
+    public Salle(int id){
+        this.id_Salle = id;
+    }
 }
