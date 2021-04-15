@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Plan</title>
+    <link rel="stylesheet" type="text/css" href="css/plan.css" />
+    <link href="../static/css/index.css" rel="stylesheet">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/es6-promise/dist/es6-promise.auto.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/imagemapster/1.5.4/jquery.imagemapster.min.js" integrity="sha512-RsXNh99DGEzAhsjz5toI7hsVEYqGtDLCd0oC8BYAFTPAYT7bv47uqKIPU4bn8PWV+dbYI1TXz4bpUghS85p7Vw==" crossorigin="anonymous"></script>
+        <link href="rdc.css" rel="stylesheet">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="configuration.html">Configurer les balises</a></li>
+        <li><a href="#">Plan général des locaux</a>
+        <ul class="sous">
+            <li><a class="active" href="plan.html">Afficher le plan et le taux d'occupation</a></li>
+            <li><a href="itineraire.html">Rechercher un itinéraire</a></li>
+        </ul></li>
+        <li><a href="rechercherPersonne.html">Rechercher une personne</a></li>
+    </ul>
+</nav>
+
+<h1>Afficher le plan</h1>
+<br/>
+
+<img id="map" src="../static/images/isisRDC.png" usemap="#image-map-rdc" class="carte">
+
+<map name="image-map-rdc">
+    <area target="" alt="grandAuditorium" title="grandAuditorium" href="" coords="4178,2791,4173,3258,4223,3290,4292,3295,4608,3317,4636,3285,4668,3244,4663,2805,4649,2768,4613,2750,4288,2722,4214,2741" shape="poly">
+    <area target="" alt="petitAuditorium" title="petitAuditorium" href="" coords="4984,3242,4958,3088,5011,3083,4997,3031,5059,3035,5116,3026,5186,3017,5261,2991,5310,2982,5332,3057,5384,3246,5323,3286,5257,3308,5169,3312,5085,3316,4971,3325" shape="poly">
+    <area target="" alt="salleB007" title="salleB007" href="" coords="5325,3008,5382,3000,5356,2952,5495,2922,5560,2956,5581,2991,5621,2978,5667,3175,5386,3264" shape="poly">
+    <area target="" alt="salleB009" title="salleB009" href="" coords="5673,2883,5759,2852,5781,2891,5850,2877,5903,3121,5790,3139,5673,3165,5621,2987,5664,2969,5651,2930" shape="poly">
+    <area target="" alt="salleB011" title="salleB011" href="" coords="6062,2826,6109,2826,6129,3088,5905,3127,5849,2883,5910,2874,5905,2817,6055,2789" shape="poly">
+    <area target="" alt="localServeur" title="localServeur" href="" coords="4969,2861,5160,2852,5185,2946,4974,2965" shape="poly">
+    <area target="" alt="salleB003" title="salleB003" href="" coords="4961,2722,5095,2718,5112,2848,4969,2852" shape="poly">
+    <area target="" alt="salleB005" title="salleB005" href="" coords="5095,2726,5199,2696,5269,2900,5230,2909,5226,2926,5182,2939,5156,2852,5108,2848" shape="poly">
+    <area target="" alt="toilettesHomme" title="toilettesHomme" href="" coords="5282,2917,5325,2909,5312,2865,5347,2843,5304,2696,5212,2726" shape="poly">
+    <area target="" alt="toilettesFemme" title="toilettesFemme" href="" coords="5308,2700,5386,2670,5451,2865,5408,2887,5377,2839,5343,2852" shape="poly">
+    <area target="" alt="salleB008" title="salleB008" href="" coords="5382,2644,5555,2592,5606,2831,5451,2870" shape="poly">
+    <area target="" alt="salleB010" title="salleB010" href="" coords="5603,2783,5647,2774,5651,2817,5859,2765,5851,2726,5916,2713,5885,2522,5555,2592" shape="poly">
+    <area target="" alt="salleB012" title="salleB012" href="" coords="5885,2527,6194,2479,6211,2670,6168,2674,6168,2713,5990,2735,5993,2709,5916,2713" shape="poly">
+    <area target="" alt="salleB018" title="salleB018" href="" coords="6307,2475,6411,2466,6502,2692,6402,2700" shape="poly">
+    <area target="" alt="salleB019" title="salleB019" href="" coords="6415,2470,6684,2453,6949,3087,6780,3060,6671,3060,6541,3065,6424,2761,6529,2763" shape="poly">
+    <area target="" alt="salleB017" title="salleB017" href="" coords="6532,3060,6389,3060,6363,2765,6424,2761" shape="poly">
+    <area target="" alt="salleB015" title="salleB015" href="" coords="6354,2765,6311,2765,6294,2804,6250,2835,6250,2961,6372,2956" shape="poly">
+    <area target="" alt="salleB016" title="salleB016" href="" coords="6372,2952,6385,3060,6263,3065,6250,2961" shape="poly">
+    <area target="" alt="salleB014" title="salleB014" href="" coords="6098,2791,6137,2783,6150,2822,6185,2830,6185,2904,6120,2909" shape="poly">
+    <area target="" alt="salleB013" title="salleB013" href="" coords="6116,2913,6185,2900,6198,3074,6120,3082" shape="poly">
+    <area target="" alt="foyer" title="foyer" href="" coords="5057,2247,175" shape="circle">
+    <area target="" alt="cafeteria" title="cafeteria" href="" coords="4804,1891,4913,1870,5026,1874,5130,1883,5195,1887,5117,2065,5039,2065,4982,2082,4934,2100,4891,2165,4869,2230,4895,2373,4809,2395,4809,2158,4799,2132" shape="poly">
+    <area target="" alt="accueilA003" title="accueilA003" href="" coords="4444,2414,4557,2409,4683,2414,4748,2414,4743,2323,4600,2331,4596,2231,4426,2258" shape="poly">
+    <area target="" alt="bureauA005" title="bureauA005" href="" coords="4444,2409,4253,2444,4253,2301,4340,2262,4379,2279,4398,2279,4419,2252" shape="poly">
+    <area target="" alt="bureauA009" title="bureauA009" href="" coords="4101,2483,4075,2357,4244,2292,4253,2440" shape="poly">
+    <area target="" alt="bureauA011" title="bureauA011" href="" coords="4005,2374,3910,2392,3923,2527,4040,2505" shape="poly">
+    <area target="" alt="bureauA013" title="bureauA013" href="" coords="3797,2409,3905,2392,3918,2527,3801,2548" shape="poly">
+    <area target="" alt="bureauA015" title="bureauA015" href="" coords="3662,2422,3788,2405,3797,2544,3654,2544" shape="poly">
+    <area target="" alt="bureauA016" title="bureauA016" href="" coords="3432,2223,3667,2227,3662,2314,3623,2331,3610,2370,3628,2401,3662,2427,3654,2540,3567,2540,3497,2531,3397,2509" shape="poly">
+    <area target="" alt="bureauA001" title="bureauA001" href="" coords="4626,1923,4804,1880,4800,1936,4765,1936,4752,2093,4711,2096,4704,2130,4652,2132" shape="poly">
+    <area target="" alt="bureauA002" title="bureauA002" href="" coords="4470,1967,4617,1923,4652,2123,4609,2123,4629,2157,4565,2166,4561,2137,4496,2145" shape="poly">
+    <area target="" alt="bureauA004" title="bureauA004" href="" coords="4351,2012,4470,1967,4500,2140,4383,2171" shape="poly">
+    <area target="" alt="bureauA006" title="bureauA006" href="" coords="4261,2067,4270,2214,4327,2214,4357,2179,4392,2168,4353,2014" shape="poly">
+    <area target="" alt="bureauA007" title="bureauA007" href="" coords="4157,2262,4118,2140,4261,2071,4270,2223" shape="poly">
+    <area target="" alt="bureauA008" title="bureauA008" href="" coords="4010,2175,4109,2140,4149,2249,4039,2290" shape="poly">
+    <area target="" alt="bureauA010" title="bureauA010" href="" coords="3897,2201,4001,2171,4031,2292,3923,2327" shape="poly">
+    <area target="" alt="bureauA012" title="bureauA012" href="" coords="3784,2227,3888,2205,3910,2318,3806,2349" shape="poly">
+    <area target="" alt="bureauA014" title="bureauA014" href="" coords="3675,2231,3779,2223,3801,2336,3723,2353,3706,2318,3667,2318" shape="poly">
+    <area target="" alt="bureauA017" title="bureauA017" href="" coords="3315,2197,3436,2210,3402,2501,3245,2440" shape="poly">
+</map>
+
+
+<img src="../static/images/isisetage.png" usemap="#image-map-etage" class="carte">
+<map name="image-map-etage">
+    <area target="" alt="salleB101" title="salleB101" href="" coords="9672,5926,9680,6494,9956,6474,10146,6460,10299,6426,10181,5864" shape="poly">
+    <area target="" alt="salleB102" title="salleB102" href="" coords="10130,5274,9901,5324,9824,5341,9672,5333,9672,5791,9969,5785,10141,5758,10274,5732" shape="poly">
+    <area target="" alt="toilettesHomme" title="toilettesHomme" href="" coords="10130,5274,10299,5223,10418,5570,10342,5596,10375,5689,10265,5714" shape="poly">
+    <area target="" alt="toilettesFemme" title="toilettesFemme" href="" coords="10291,5231,10477,5163,10613,5604,10528,5664,10494,5562,10401,5596" shape="poly">
+    <area target="" alt="salleB105" title="salleB105" href="" coords="10477,5163,11054,5002,11096,5477,10621,5621" shape="poly">
+    <area target="" alt="salleB106" title="salleB106" href="" coords="11054,5011,11108,5480,11724,5358,11673,4901" shape="poly">
+    <area target="" alt="salleB109" title="salleB109" href="" coords="11673,4892,12063,4841,12114,5299,11715,5358" shape="poly">
+    <area target="" alt="salleB103" title="salleB103" href="" coords="10172,5867,10257,5850,10520,5782,10604,5740,10830,6287,10313,6433" shape="poly">
+    <area target="" alt="salleB104" title="salleB104" href="" coords="10596,5757,10706,5714,10740,5774,10833,5799,10918,5782,10995,5748,11037,5672,11042,5638,11135,5612,11164,6172,10833,6282" shape="poly">
+    <area target="" alt="salleB107" title="salleB107" href="" coords="11130,5604,11724,5486,11817,6053,11175,6194" shape="poly">
+    <area target="" alt="salleB106" title="salleB106" href="" coords="11732,5486,11944,5452,11995,5511,12055,5553,12139,5570,12224,5528,12368,5994,11826,6053" shape="poly">
+    <area target="" alt="salleB109" title="salleB109" href="" coords="12224,5528,12301,5418,12513,5400,12742,5986,12351,5994" shape="poly">
+    <area target="" alt="connectedHealthLab" title="connectedHealthLab" href="" coords="12292,4841,13013,4807,13539,6045,13174,5994,12950,5996,12752,5982" shape="poly">
+</map>
+
+<script src="../static/javascript/rdc.js"></script>
+</body>
+</html>
