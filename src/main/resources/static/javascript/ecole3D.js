@@ -33,8 +33,8 @@ gltfLoader.load(
     '../static/3Dmodels/isis.gltf',
     (gltf) =>
     {
-        console.log('success')
-        console.log(gltf)
+        // console.log('success')
+        // console.log(gltf)
         while(gltf.scene.children.length)
         {
             scene.add(gltf.scene.children[0])
