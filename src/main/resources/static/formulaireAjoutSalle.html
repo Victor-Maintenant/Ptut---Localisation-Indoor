@@ -16,7 +16,7 @@
 <body>
     <nav>
         <ul>
-            <li><a class="active" href="accueil.html">Accueil</a></li>
+            <li><a class="active" href="index.html">Accueil</a></li>
             <li><a href="configuration.html">Configurer les balises</a></li>
             <li><a href="#">Plan général des locaux</a>
             <ul class="sous">
@@ -28,10 +28,19 @@
     </nav>
 
 
-    <h1>Localisation Indoor</h1>
-    <p>Bienvenue sur notre application de localisation Indoor</p>
-    <p>Cette application a pour vocation de faciliter le quotidien pour le milieu médical.</p>
-    <div class="webgl"></div>
+    <h1>Ajout de Personne</h1>
+
+    <form th:object="${salle}" method="POST" th:action="@{save]}">
+        <label for="num">Num:</label>
+        <input type="text" th:field="*{num}" placeholder="A001"/>
+        <label for="maxPer">Nombre de personne Max:</label>
+        <input type="number" th:field="*{max_Per}" placeholder="0~99"/>
+        <label for="nom">Type de Personnel:</label>
+        <select for="sexe" th:field="*{sexe}">
+          <option th:each="a: ${batiment}" th:value="${a.id}" th:text="${a.nom}"></option>
+        </select>
+        <input type="submit" value="Enregistrer" />
+    </form>
 
 
     <div class="footer-basic">
