@@ -1,30 +1,32 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Liste des téléphones</title>
+        <title>Liste des salles</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" th:href="@{/css/styleTableaux.css}" href="../static/css/styleTableaux.css"/>    
     </head>
     <body>
-        <h1>Les téléphones</h1>
+        <h1>Les salles</h1>
         <!--/* On appelle l'URL 'add' du contôleur */-->
-        <a th:href="@{add}" href='formulaireAjoutTelephone.html'>Ajouter un téléphone</a>
+        <a th:href="@{add}" href='formulaireAjoutSalle.html'>Ajouter une salle</a>
         <!--/* On affiche un éventuel message d'erreur */-->
         <h3 th:text="${message}">Message de succès ou d'erreur</h3>   
         <table>
             <thead>
                 <tr>
-                    <th>Propriétaire</th>
-                    <th>Numéro de téléphone</th>
+                    <th>Numéro</th>
+                    <th>Nombre maximal de personnes</th>
+                    <th>Bâtiment</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="t: ${telephones}">
-                    <td th:text="${t.personne}"></td>
-                    <td th:text="${t.num}"></td>
-                    <td><a th:href="@{delete(id=${t.id_Telephone})}">Supprimer</a></td>
+                <tr th:each="s: ${salles}">
+                    <td th:text="${s.num}"></td>
+                    <td th:text="${s.max_Per}"></td>
+                    <td th:text="${s.batiment}"></td>
+                    <td><a th:href="@{delete(id=${p.id_Salle})}">Supprimer</a></td>
                 </tr>
             </tbody>
         </table>
