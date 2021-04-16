@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<!--/* 
+        Le contrôleur transmet deux informations à cette vue :
+                - villes : la liste des villes à afficher
+                - message : un éventuel message d'erreur ou d'information
+*/-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Liste des villes</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styletableaux.css}" href="../static/css/styletableaux.css" />
+    <!--on fait appel à un fichier CSS-->
+</head>
+
+<body>
+    <h1>Les villes</h1>
+    <!--/* On appelle l'URL 'add' du contôleur */-->
+    <a th:href="@{add}" href='formulaireAjoutVille.html'>Ajouter un ville</a>
+    <!--/* On affiche un éventuel message d'erreur */-->
+    <h3 th:text="${message}">Message de succès ou d'erreur</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Code Postal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="v: ${villes}">
+                <td th:text="${v.id_Ville}"></td>
+                <!--le t. fait référence au tableau, pour appeler les caractéristiques correspondants-->
+                <td th:text="${v.nom}"></td>
+                <td th:text="${v.code_Postal}"></td>
+                <td><a th:href="@{delete(id=${v.id_Ville})}">Supprimer</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr/>
+    <a th:href="@{/}" href="../static/index.html">Retour au menu</a>
+    <hr/>
+</body>
+
+</html>
