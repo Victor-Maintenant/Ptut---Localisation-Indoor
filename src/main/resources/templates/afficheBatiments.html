@@ -1,47 +1,39 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Liste des personnes</title>
+        <title>Liste des bâtiments</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" th:href="@{/css/styleTableaux.css}" href="../static/css/styleTableaux.css"/>    
     </head>
     <body>
-        <h1>Les personnes</h1>
+        <h1>Les bâtiments</h1>
         <!--/* On appelle l'URL 'add' du contôleur */-->
-        <a th:href="@{add}" href='formulaireAjoutPersonne.html'>Ajouter une personne</a>
+        <a th:href="@{add}" href="formulaireAjoutBatiment.html">Ajouter un bâtiment</a>
         <!--/* On affiche un éventuel message d'erreur */-->
         <h3 th:text="${message}">Message de succès ou d'erreur</h3>   
         <table>
             <thead>
                 <tr>
                     <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Sexe</th>
-                    <th>Age</th>
                     <th>Adresse</th>
-                    <th>Type</th>
                     <th>Ville</th>
-                    <th>Telephone</th>
+                    <th>Salles</th>
+                    <th>Plans</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="p: ${personnes}">
-                    <td th:text="${p.nom}"></td>
-                    <td th:text="${p.prenom}"></td>
-                    <td th:text="${b.sexe}"></td>
-                    <td th:text="${b.age}"></td>
+                <tr th:each="b: ${batiments}">
+                    <td th:text="${b.nom}"></td>
                     <td th:text="${b.adresse}"></td>
-                    <td th:text="${b.type}"></td>
-                    <td th:text="${b.ville}"></td>
-                    <td th:text="${b.telephone}"></td>
-                    <td><a th:href="@{delete(id=${p.id_Personne})}">Supprimer</a></td>
+                    <td th:text="${b.ville.nom}"></td>
+                    <td><a th:href="@{delete(id=${b.id_Batiment})}">Supprimer</a></td>
                 </tr>
             </tbody>
         </table>
         <hr/>
-        <a th:href="@{/}" href="../static/configuration.html">Retour au menu</a>
+        <a th:href="@{/configuration}" href="configuration.html">Retour au menu</a>
         <hr/>
     </body>
 </html>

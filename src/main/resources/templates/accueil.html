@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Localisation Indoor</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/location.ico" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/accueil.css}" href="css/accueil.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <script type="module" src="/src/main/resources/static/javascript/ecole3D.js"></script>
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a class="active" href="acceuil" target="_blank" >Accueil</a></li>
+            <li><a href="configuration" target="_blank">Configuration application</a></li>
+            <li><a href="#">Plan général des locaux</a>
+            <ul class="sous">
+                <li><a  href="plan" target="_blank">Afficher le plan et le taux d'occupation</a></li>
+                <li><a href="itineraire" target="_blank">Rechercher un itinéraire</a></li>
+            </ul></li>
+            <li><a href="rechercherPersonne" target="_blank">Rechercher une personne</a></li>
+        </ul>
+    </nav>
+
+
+    <h1>Localisation Indoor</h1>
+    <p>Bienvenue sur notre application de localisation Indoor</p>
+    <p>Cette application a pour vocation de faciliter le quotidien pour le milieu médical.</p>
+    <canvas class="webgl"></canvas>
+
+
+    <div class="footer-basic">
+        <footer>
+            <div class="social">
+                <div class="social">
+                    <a href="https://www.instagram.com/isis_ingenieur/"><i class="icon ion-social-instagram"></i></a>
+                    <a href="https://twitter.com/isis_ingenieur"><i class="icon ion-social-twitter"></i></a>
+                    <a href="https://www.facebook.com/isis.castres/"><i class="icon ion-social-facebook"></i></a>
+                    <a href="https://github.com/Victor-Maintenant/Ptut---Localisation-Indoor"><i class="icon ion-social-github"></i></a>
+                </div>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="accueil.html">Accueil</a></li>
+                    <li class="list-inline-item"><a href="https://isis.univ-jfc.fr/">ISIS</a></li>
+                    <li class="list-inline-item"><a href="https://www.gouvernement.fr/info-coronavirus">Actualités Coronavirus</a></li>
+                </ul>
+        </footer>
+        </div>
+
+        <div class="main">
+        </div>
+
+</body>
+
+</html>

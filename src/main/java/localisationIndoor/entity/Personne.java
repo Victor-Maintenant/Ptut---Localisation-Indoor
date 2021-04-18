@@ -11,15 +11,15 @@ import lombok.*;
 public class Personne {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Integer id_Personne;
-    @Column 
+    @Column(nullable = false) @NonNull
     private String nom;
-    @Column @NonNull
+    @Column(nullable = false) @NonNull
     private String prenom;
-    @Column
+    @Column(nullable = true)
     private String sexe;
-    @Column 
+    @Column(nullable = true)
     private int age;
-    @Column @NonNull
+    @Column(nullable = true)
     private String adresse;
     
     @ManyToOne
@@ -30,4 +30,5 @@ public class Personne {
     
     @OneToOne
     private Telephone telephone;
+   
 }
