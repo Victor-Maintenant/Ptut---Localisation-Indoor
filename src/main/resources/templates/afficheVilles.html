@@ -18,7 +18,7 @@
 <body>
     <h1>Les villes</h1>
     <!--/* On appelle l'URL 'add' du contôleur */-->
-    <a th:href="@{add}" href='formulaireAjoutVille.html'>Ajouter un ville</a>
+    <a th:href="@{add}" href="formulaireAjoutVille.html">Ajouter un ville</a>
     <!--/* On affiche un éventuel message d'erreur */-->
     <h3 th:text="${message}">Message de succès ou d'erreur</h3>
     <table>
@@ -40,7 +40,7 @@
         </tbody>
     </table>
     <hr/>
-    <a th:href="@{/}" href="../static/index.html">Retour au menu</a>
+    <a th:href="@{/configuration}" href="configuration.html">Retour au menu</a>
     <hr/>
 </body>
 

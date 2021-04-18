@@ -5,33 +5,38 @@
     <meta charset="UTF-8" />
     <title>Localisation Indoor</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/location.ico" />
-    <link rel="stylesheet" type="text/css" href="../static/css/formulaires.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/formulaires.css}" href="../static/css/formulaires.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <script type="module" src="../static/javascript/ecole3D.js"></script>
+    <script type="module" src="ecole3D.js"></script>
 
 </head>
 
 <body>
     <nav>
         <ul>
-            <li><a class="active" href="index.html">Accueil</a></li>
-            <li><a href="configuration.html">Configurer les balises</a></li>
+            <li><a class="active" th:href="@{/accueil}" href="../static/index.html">Accueil</a></li>
+            <li><a th:href="@{/configuration}" href="configuration.html">Configuration application</a></li>
             <li><a href="#">Plan général des locaux</a>
             <ul class="sous">
-                <li><a  href="plan.html">Afficher le plan et le taux d'occupation</a></li>
-                <li><a href="itineraire.html">Rechercher un itinéraire</a></li>
+                <li><a th:href="@{/plan}" href="plan.html">Afficher le plan et le taux d'occupation</a></li>
+                <li><a th:href="@{/itinéraire}" href="itineraire.html">Rechercher un itinéraire</a></li>
             </ul></li>
-            <li><a href="rechercherPersonne.html">Rechercher une personne</a></li>
+            <li><a th:href="@{/recherchePersonne}" href="rechercherPersonne.html">Rechercher une personne</a></li>
         </ul>
     </nav>
 
-    <h1>Ajouter un type de personne</h1>
 
-    <form th:object="${typePersonne}" method="POST" th:action="@{save]}">
-        <label for="nom">Libelle:</label>
-        <input type="text" th:field="*{libelle}" placeholder="Nom"/>
+    <h1>Ajout d'une Balise</h1>
+
+    <form th:object="${balise}" method="POST" th:action="@{save}">
+        <label for="num">Num:</label>
+        <input type="text" th:field="*{num}" placeholder="Nom"/>
+        <label for="num">Salle:</label>
+        <select for="salle" th:field="*{salle}">
+          <option th:each="a: ${salles}" th:value="${a.id_Salle}" th:text="${a.num}"></option>
+        </select>
         <input type="submit" value="Enregistrer" />
     </form>
 
@@ -55,7 +60,7 @@
 
         <div class="main">
         </div>
-        
+
 </body>
 
 </html>

@@ -28,5 +28,13 @@ public interface PersonneRepository extends JpaRepository<Personne, Integer> {
             nativeQuery = true)
     public List<Personne> getPersonneByType(String type);
     
+    @Query(
+            value = "SELECT id_Personne FROM PERSONNE WHERE nom = :nom and prenom = :prenom",
+            nativeQuery = true)
+    public int getPersonneByNomPrenom(String nom, String prenom);
     
+    @Query(
+            value = "SELECT nom FROM PERSONNE",
+            nativeQuery = true)
+    public List<String> getNoms();
 }
