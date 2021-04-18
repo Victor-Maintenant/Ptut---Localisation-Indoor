@@ -16,14 +16,14 @@
 <body>
     <nav>
         <ul>
-            <li><a class="active" href="acceuil" target="_blank" >Accueil</a></li>
-            <li><a href="configuration" target="_blank">Configuration application</a></li>
+            <li><a class="active" th:href="@{/accueil}" href="../static/index.html">Accueil</a></li>
+            <li><a th:href="@{/configuration}" href="configuration.html">Configuration application</a></li>
             <li><a href="#">Plan général des locaux</a>
             <ul class="sous">
-                <li><a  href="plan" target="_blank">Afficher le plan et le taux d'occupation</a></li>
-                <li><a href="itineraire" target="_blank">Rechercher un itinéraire</a></li>
+                <li><a th:href="@{/plan}" href="plan.html">Afficher le plan et le taux d'occupation</a></li>
+                <li><a th:href="@{/itinéraire}" href="itineraire.html">Rechercher un itinéraire</a></li>
             </ul></li>
-            <li><a href="rechercherPersonne" target="_blank">Rechercher une personne</a></li>
+            <li><a th:href="@{/recherchePersonne}" href="rechercherPersonne.html">Rechercher une personne</a></li>
         </ul>
     </nav>
 
