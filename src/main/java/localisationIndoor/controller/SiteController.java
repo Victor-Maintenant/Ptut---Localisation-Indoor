@@ -33,7 +33,7 @@ public class SiteController {
         return "configuration";
     }
     
-    @GetMapping(path = "/acceuil")
+    @GetMapping(path = "/accueil")
     public String afficheLAccueil() {
         return "accueil";
     }

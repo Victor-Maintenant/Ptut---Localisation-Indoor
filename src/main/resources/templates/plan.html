@@ -13,21 +13,21 @@
 <body>
 <nav>
     <ul>
-        <li><a class="active" th:href="@{/accueil}" href="../static/index.html">Accueil</a></li>
+        <li><a class="active" th:href="@{/accueil}" href="accueil.html">Accueil</a></li>
             <li><a th:href="@{/configuration}" href="configuration.html">Configuration application</a></li>
             <li><a href="#">Plan général des locaux</a>
             <ul class="sous">
                 <li><a th:href="@{/plan}" href="plan.html">Afficher le plan et le taux d'occupation</a></li>
-                <li><a th:href="@{/itinéraire}" href="itineraire.html">Rechercher un itinéraire</a></li>
+                <li><a th:href="@{/itineraire}" href="itineraire.html">Rechercher un itinéraire</a></li>
             </ul></li>
-            <li><a th:href="@{/recherchePersonne}" href="rechercherPersonne.html">Rechercher une personne</a></li>
+            <li><a th:href="@{/rechercherPersonne}" href="rechercherPersonne.html">Rechercher une personne</a></li>
     </ul>
 </nav>
 
 <h1>Afficher le plan</h1>
 <br/>
 
-<img id="map" src="../static/images/isisRDC.png" usemap="#image-map-rdc" class="carte">
+<img id="map" th:src="@{/images/isisRDC.png}" src="../static/images/isisRDC.png" usemap="#image-map-rdc" class="carte">
 
 <map name="image-map-rdc">
     <area target="" alt="grandAuditorium" title="grandAuditorium" href="" coords="4178,2791,4173,3258,4223,3290,4292,3295,4608,3317,4636,3285,4668,3244,4663,2805,4649,2768,4613,2750,4288,2722,4214,2741" shape="poly">
@@ -72,7 +72,7 @@
 </map>
 
 
-<img src="../static/images/isisetage.png" usemap="#image-map-etage" class="carte">
+<img th:src="@{/images/isisetage.png}" src="../static/images/isisetage.png" usemap="#image-map-etage" class="carte">
 <map name="image-map-etage">
     <area target="" alt="salleB101" title="salleB101" href="" coords="9672,5926,9680,6494,9956,6474,10146,6460,10299,6426,10181,5864" shape="poly">
     <area target="" alt="salleB102" title="salleB102" href="" coords="10130,5274,9901,5324,9824,5341,9672,5333,9672,5791,9969,5785,10141,5758,10274,5732" shape="poly">
@@ -89,6 +89,6 @@
     <area target="" alt="connectedHealthLab" title="connectedHealthLab" href="" coords="12292,4841,13013,4807,13539,6045,13174,5994,12950,5996,12752,5982" shape="poly">
 </map>
 
-<script src="../static/javascript/rdc.js"></script>
+<script th:src="@{/javascript/rdc.js}" src="../static/javascript/rdc.js"></script>
 </body>
 </html>
