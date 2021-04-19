@@ -12,21 +12,21 @@
 
 <body>
     <h1>Les villes</h1>
-    <a th:href="@{add}" href="formulaireAjoutVille.html">Ajouter une ville</a>
+    <a th:href="@{add}" href="formulaireAjoutPlan.html">Ajouter un plan</a>
     <br/><br/>
     <table>
         <thead>
             <tr>
-                <th>Nom</th>
-                <th>Code Postal</th>
+                <th>Plan</th>
+                <th>Bâtiment</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            <tr th:each="v: ${villes}">
-                <td th:text="${v.nom}"></td>
-                <td th:text="${v.code_Postal}"></td>
-                <td><a th:href="@{delete(id=${v.id_Ville})}">Supprimer</a></td>
+            <tr th:each="p: ${plans}">
+                <td th:text="${p.plan}"></td>
+                <td th:text="${p.batiment}"></td>
+                <td><a th:href="@{delete(id=${v.id_Plan})}">Supprimer</a></td>
             </tr>
         </tbody>
     </table>

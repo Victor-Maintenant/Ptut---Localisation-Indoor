@@ -8,11 +8,9 @@
     </head>
     <body>
         <h1>Les types de personne</h1>
-        <!--/* On appelle l'URL 'add' du contôleur */-->
         <a th:href="@{add}" href="formulaireAjoutTypePersonne.html">Ajouter un type de personne</a>
-        <!--/* On affiche un éventuel message d'erreur */-->
-        <h3 th:text="${message}">Message de succès ou d'erreur</h3>   
         <table>
+            <br/><br/>
             <thead>
                 <tr>
                     <th>Libelle</th>
@@ -26,8 +24,7 @@
                 </tr>
             </tbody>
         </table>
-        <hr/>
+        <br/>
         <a th:href="@{/configuration}" href="configuration.html">Retour au menu</a>
-        <hr/>
     </body>
 </html>
