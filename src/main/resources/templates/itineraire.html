@@ -5,6 +5,10 @@
     <meta charset="UTF-8" />
     <title>Itinéraire</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/itineraire.css}" href="../satic/css/itineraire.css" />
+    <script type="text/javascript" th:src="@{/paperjs/paper-full.js}" src="paperjs/paper-full.js"></script>
+    <!-- Load external PaperScript and associate it with myCanvas -->
+    
+    <script type="text/paperscript" src="javascript/paper.js" canvas="canvasA"></script>
 </head>
 
 <body>
@@ -20,8 +24,22 @@
             <li><a th:href="@{/rechercherPersonne}" href="rechercherPersonne.html">Rechercher une personne</a></li>
         </ul>
     </nav>
-
+    
+    <canvas id="myCanvas" resize></canvas>
+    <canvas id="canvasA" resize></canvas>
+    
     <h1>Rechercher un itinéraire</h1>
+    
+    <img id="map" th:src="@{/images/isisRDC.png}" src="../static/images/isisRDC.png" >
+    <form id="formTrajet">
+        
+              <legend>Itinéraire entre deux salles</legend>
+              <input id="salle1" placeholder="Salle Départ" type="text" />
+              <input id="salle2" placeholder="Salle Arrivée" type="text" />
+              <input type="submit" />   
+        
+    </form>
+    <script type="text/javascript" src="javascript/paperDijsktra.js" canvas="myCanvas"></script>
 </body>
 
 </html>

@@ -69,3 +69,36 @@ a:hover {
     color: white;
     text-decoration: none;
 }
+
+#map{
+    width: 1920px;
+    height: 1080px;
+}
+
+#myCanvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#canvasA{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#formTrajet{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+#bouton{
+    width: 20px;
+    height: 15px;
+    background: 'red';
+}
