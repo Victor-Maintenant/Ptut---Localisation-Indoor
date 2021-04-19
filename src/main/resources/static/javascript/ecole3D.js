@@ -8,7 +8,7 @@ import { GLTFLoader } from 'https://unpkg.com/three@0.127.0/examples/jsm/loaders
 const textureLoader = new THREE.TextureLoader()
  const cubeTextureLoader = new THREE.CubeTextureLoader()
 
- const matcapTexture = textureLoader.load('../static/3Dmodels/textures/fondEcole.png')
+ const matcapTexture = textureLoader.load('3Dmodels/textures/fondEcole.png')
 
 
 /**
@@ -30,7 +30,7 @@ scene.background = matcapTexture
 const gltfLoader = new GLTFLoader()
 
 gltfLoader.load(
-    '../static/3Dmodels/isis.gltf',
+    '3Dmodels/isis.gltf',
     (gltf) =>
     {
         // console.log('success')
