@@ -4,14 +4,12 @@
         <title>Liste des salles</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" th:href="@{/css/styleTableaux.css}" href="../static/css/styleTableaux.css"/>    
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../static/css/style.css"/>    
     </head>
     <body>
         <h1>Les salles</h1>
-        <!--/* On appelle l'URL 'add' du contôleur */-->
         <a th:href="@{add}" href="formulaireAjoutSalle.html">Ajouter une salle</a>
-        <!--/* On affiche un éventuel message d'erreur */-->
-        <h3 th:text="${message}">Message de succès ou d'erreur</h3>   
+        <br/><br/>
         <table>
             <thead>
                 <tr>
@@ -30,8 +28,7 @@
                 </tr>
             </tbody>
         </table>
-        <hr/>
+        <br/>
         <a th:href="@{/configuration}" href="configuration.html">Retour au menu</a>
-        <hr/>
     </body>
 </html>

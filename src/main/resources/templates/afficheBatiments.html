@@ -4,27 +4,23 @@
         <title>Liste des bâtiments</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" th:href="@{/css/styleTableaux.css}" href="../static/css/styleTableaux.css"/>    
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../static/css/style.css"/>    
     </head>
     <body>
         <h1>Les bâtiments</h1>
-        <!--/* On appelle l'URL 'add' du contôleur */-->
         <a th:href="@{add}" href="formulaireAjoutBatiment.html">Ajouter un bâtiment</a>
-        <!--/* On affiche un éventuel message d'erreur */-->
-        <h3 th:text="${message}">Message de succès ou d'erreur</h3>   
+        <br/><br/>
         <table>
             <thead>
                 <tr>
                     <th>Nom</th>
                     <th>Adresse</th>
                     <th>Ville</th>
-                    <th>Salles</th>
-                    <th>Plans</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="b: ${batiments}">
+                <tr th:each="p: ${plans}">
                     <td th:text="${b.nom}"></td>
                     <td th:text="${b.adresse}"></td>
                     <td th:text="${b.ville.nom}"></td>
@@ -32,8 +28,7 @@
                 </tr>
             </tbody>
         </table>
-        <hr/>
+        <br/>
         <a th:href="@{/configuration}" href="configuration.html">Retour au menu</a>
-        <hr/>
     </body>
 </html>
