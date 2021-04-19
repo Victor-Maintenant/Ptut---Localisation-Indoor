@@ -5,8 +5,15 @@
  */
 package localisationIndoor.controller;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import localisationIndoor.dao.BaliseRepository;
+import localisationIndoor.dao.PassageRepository;
 import localisationIndoor.dao.PersonneRepository;
 import localisationIndoor.dao.SalleRepository;
+import localisationIndoor.entity.Balise;
+import localisationIndoor.entity.Passage;
 import localisationIndoor.entity.Personne;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +28,10 @@ public class SiteController {
     private SalleRepository salleDAO;
     @Autowired
     private PersonneRepository personneDAO;
+    @Autowired
+    private BaliseRepository baliseDAO;
+    @Autowired
+    private PassageRepository passageDAO;
     
     @GetMapping(path = "/configuration")
     public String afficheLesConfiguration() {
@@ -33,7 +44,20 @@ public class SiteController {
     }
     
     @GetMapping(path = "/plan")
-    public String afficheLePlan() {
+    public String afficheLePlan(Model model) {
+        HashMap<String,Integer> hm = new HashMap<>();
+        List<Passage> passages = new LinkedList<>();
+        passages = passageDAO.findAll();
+        List<Balise> balises = new LinkedList<>();
+        balises = baliseDAO.findAll();
+        for(Passage p : passages){
+            p.addPassageDansBalise();
+        }
+        for(Balise b : balises){
+            int NbPer = b.getNbPersonneDansChaqueSalle();
+            hm.put(b.getSalle().getNum(), NbPer);  
+        }
+        model.addAttribute("personnesParSalles", hm);
         return "plan";
     }
     

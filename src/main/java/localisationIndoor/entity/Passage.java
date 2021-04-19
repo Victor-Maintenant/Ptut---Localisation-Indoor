@@ -45,17 +45,4 @@ public class Passage {
     public void addPassageDansBalise(){
         this.balise.getPassages().add(this);
     }
-    public int getNbPersonneDansChaqueSalle(int id){
-        int nbPer = 0; 
-        for(Passage passage : this.balise.getPassages()){
-            if (passage.balise.getSalle().getId_Salle() == id){
-                if( passage.getA().isBefore(LocalDateTime.now())){
-                   if((passage.getA().isAfter(LocalDateTime.now().minusMinutes(5)))){
-                       nbPer += 1;
-                    } 
-                }
-            }
-        }
-        return nbPer;
-    }
 }

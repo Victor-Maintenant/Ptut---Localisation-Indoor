@@ -17,7 +17,6 @@
         <thead>
             <tr>
                 <th>Numéro</th>
-                <th colspan="2">Coordonnées</th>
                 <th>Salle</th>
                 <th>Action</th>
             </tr>
@@ -25,9 +24,7 @@
         <tbody>
             <tr th:each="b: ${balises}">
                 <td th:text="${b.num}"></td>
-                <td th:text="${b.coor_x}"></td>
-                <td th:text="${b.coor_y}"></td>
-                <td th:text="${b.salle}"></td>
+                <td th:text="${b.salle.num}"></td>
                 <td><a th:href="@{delete(id=${b.id_Balise})}">Supprimer</a></td>
             </tr>
         </tbody>
