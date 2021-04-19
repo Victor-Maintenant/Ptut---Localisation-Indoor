@@ -1,7 +1,8 @@
 $('img[usemap]').mapster({
+    mapKey: 'alt',
     fillColor: 'fcba03',
     stroke: true,
-    selected: true
+    selected: false
 });
 
 $('#mybtn').click(function(){
@@ -14,7 +15,8 @@ $('#mybtn').click(function(){
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
-if (urlParams.has('salle') == true){ 
+if (urlParams.has('salle') === true){ 
+    console.log(urlParams.get('salle'))
     // select all New England states
-    $('img').mapster('set',true,urlParams.get('salle'), {fillColor: '0000ff'});
+    $('img').mapster('set',true,urlParams.get('salle'));
 }
