@@ -17,25 +17,4 @@ public class BaliseRepositoryTest {
     
     @Autowired
     private BaliseRepository baliseDAO;
-    
-    @Test
-    @Sql("test-SQL.sql")
-    public void recupererCoorXDUneBalise() {
-        log.info("On compte combien de personne on récupère avec un age déterminé");
-        assertEquals(15.2, baliseDAO.getCoorX(1));
-    }
-    
-    @Test
-    @Sql("test-SQL.sql")
-    public void recupererCoorYDUneBalise() {
-        log.info("On compte combien de personne on récupère avec un age déterminé");
-        assertEquals(10, baliseDAO.getCoorY(1));
-    }
-    
-    @Test
-    @Sql("test-SQL.sql")
-    public void recupererBaliseEnFonctionDUnePersonne() {
-        log.info("On compte combien de personne on récupère avec un age déterminé");
-        assertEquals(3, baliseDAO.getBaliseEnFonctionDePersonne(1).getId_Balise());
-    }
 }

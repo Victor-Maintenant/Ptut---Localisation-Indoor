@@ -5,26 +5,20 @@
  */
 package localisationIndoor.controller;
 
-import localisationIndoor.dao.BaliseRepository;
 import localisationIndoor.dao.PersonneRepository;
-import localisationIndoor.dao.TypePersonneRepository;
-import localisationIndoor.entity.Balise;
+import localisationIndoor.dao.SalleRepository;
 import localisationIndoor.entity.Personne;
-import localisationIndoor.entity.Telephone;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class SiteController {
     @Autowired
-    private BaliseRepository baliseDAO;
+    private SalleRepository salleDAO;
     @Autowired
     private PersonneRepository personneDAO;
     
@@ -49,16 +43,15 @@ public class SiteController {
     }
     
     @GetMapping(path = "/rechercherPersonne")
-    public String afficheLaRechercheDUnePersonne() {
+    public String afficheLaRechercheDUnePersonne(@ModelAttribute("personne") Personne personne, Model model) {
+        model.addAttribute("personnes", personneDAO.findAll());
         return "rechercherPersonne";
     }
     
     
     @PostMapping(path = "affichage")
-    public @ResponseBody Balise AffichelaPersonneSurLaCarte(Personne personne, Model model) {
-        model.addAttribute("noms", personneDAO.getNoms());
-        int id = personneDAO.getPersonneByNomPrenom(personne.getNom(), personne.getPrenom());
-        return  baliseDAO.getBaliseEnFonctionDePersonne(id);
+    public String AffichelaPersonneSurLaCarte(Personne personne) {
+        return  "redirect:plan?salle="+salleDAO.getNumSalleEnFonctionDePersonne(personne.getId_Personne())+"";
     }
     
     

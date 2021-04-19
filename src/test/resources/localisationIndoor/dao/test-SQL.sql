@@ -15,10 +15,10 @@ INSERT INTO Salle(id_Salle, num, max_Per, batiment_id_batiment) VALUES (1, 'A001
 INSERT INTO Salle(id_Salle, num, max_Per, batiment_id_batiment) VALUES (2, 'A002', 25, 1);
 INSERT INTO Salle(id_Salle, num, max_Per, batiment_id_batiment) VALUES (3, 'A003', 15, 1);
 INSERT INTO Salle(id_Salle, num, max_Per, batiment_id_batiment) VALUES (4, 'A004', 15, 1);
-INSERT INTO Balise(id_Balise, num, coor_x, coor_y, salle_id_salle) VALUES (1, 'AB101', 15.2, 10, 4);
-INSERT INTO Balise(id_Balise, num, coor_x, coor_y, salle_id_salle) VALUES (2, 'CD102', 15.2, 20, 2);
-INSERT INTO Balise(id_Balise, num, coor_x, coor_y, salle_id_salle) VALUES (3, 'EF103', 17, 35.4, 1);
-INSERT INTO Balise(id_Balise, num, coor_x, coor_y, salle_id_salle) VALUES (4, 'GH104', 17, 45.8, 3);
+INSERT INTO Balise(id_Balise, num, salle_id_salle) VALUES (1, 'AB101', 4);
+INSERT INTO Balise(id_Balise, num, salle_id_salle) VALUES (2, 'CD102', 2);
+INSERT INTO Balise(id_Balise, num, salle_id_salle) VALUES (3, 'EF103', 1);
+INSERT INTO Balise(id_Balise, num, salle_id_salle) VALUES (4, 'GH104', 3);
 INSERT INTO Passage(id, telephone_id_telephone, balise_id_balise, A) VALUES (1, 1, 1,'06-04-2021 13:27:00');
 INSERT INTO Passage(id, telephone_id_telephone, balise_id_balise, A) VALUES (2, 2, 1,'06-04-2021 14:30:00');
 INSERT INTO Passage(id, telephone_id_telephone, balise_id_balise, A) VALUES (3, 1, 2,'06-04-2021 14:30:00');

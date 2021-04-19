@@ -1,12 +1,15 @@
 package localisationIndoor.dao;
 
 import java.util.List;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
 import org.springframework.data.jpa.repository.JpaRepository;
 import localisationIndoor.entity.Personne;
 import org.springframework.data.jpa.repository.Query;
 
 public interface PersonneRepository extends JpaRepository<Personne, Integer> {
-     @Query(
+
+    @Query(
             value = "SELECT * FROM PERSONNE WHERE age = :age",
             nativeQuery = true)
     public List<Personne> getPersonneByAge(int age);
