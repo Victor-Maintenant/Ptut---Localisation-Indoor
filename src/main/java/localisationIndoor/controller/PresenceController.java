@@ -1,23 +1,14 @@
 package localisationIndoor.controller;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import localisationIndoor.dao.BaliseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import localisationIndoor.dao.PassageRepository;
-import localisationIndoor.dao.SalleRepository;
 import localisationIndoor.dao.TelephoneRepository;
 import localisationIndoor.entity.Balise;
 import localisationIndoor.entity.Passage;
-import localisationIndoor.entity.Salle;
 import localisationIndoor.entity.Telephone;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -32,8 +23,6 @@ public class PresenceController {
 	private TelephoneRepository telDAO;
         @Autowired
 	private BaliseRepository baliseDAO;
-        @Autowired
-	private SalleRepository salleDAO;
         
 	
 	/**
@@ -58,17 +47,4 @@ public class PresenceController {
             nouveau.addPassageDansBalise();
         }
         
-        @GetMapping(path = "/presence/nbPersonne")
-	public HashMap<String, Integer> afficheNbPersonne(Model model) {
-            HashMap<String,Integer> hm = new HashMap<>();
-            List<Passage> passages = new LinkedList<>();
-            passages = passageDAO.findAll();
-            for(Passage p : passages){
-                for(Salle s : salleDAO.findAll()){
-                    int NbPer = p.getNbPersonneDansChaqueSalle(s.getId_Salle());
-                    hm.put(s.getNum(), NbPer);
-                }
-            }
-            return hm;
-	}
 }
