@@ -35,7 +35,7 @@
         <input type="text" th:field="*{num}" placeholder="A001"/>
         <label for="maxPer">Nombre de personne Max:</label>
         <input type="number" th:field="*{max_Per}" placeholder="0~99"/>
-        <label for="nom">Type de Personnel:</label>
+        <label for="nom">Batiment:</label>
         <select for="batiment" th:field="*{batiment}">
           <option th:each="a: ${batiments}" th:value="${a.id_Batiment}" th:text="${a.nom}"></option>
         </select>

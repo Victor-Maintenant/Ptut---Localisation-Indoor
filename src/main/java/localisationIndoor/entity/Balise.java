@@ -46,4 +46,8 @@ public class Balise {
         }
         return nbPer;
     }
+    
+    public Salle getSalle(){
+        return this.salle;
+    }
 }

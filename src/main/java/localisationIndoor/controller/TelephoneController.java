@@ -50,7 +50,7 @@ public class TelephoneController {
      */
     @GetMapping(path = "add")
     public String montreLeFormulairePourAjoutTelephone(@ModelAttribute("telephone") Telephone telephone, Model model) {
-        model.addAttribute("personnes", personneDAO.findAll());
+        model.addAttribute("personnes", personneDAO.getPersonneSansTel());
         return "formulaireAjoutTelephone";
     }
     

@@ -44,7 +44,7 @@ public class BaliseController {
      */
     @GetMapping(path = "add")
     public String montreLeFormulairePourAjoutBalise(@ModelAttribute("balise") Balise balise, Model model) {
-        model.addAttribute("salles", salleDAO.findAll());
+        model.addAttribute("salles", salleDAO.getSalleSansBalise());
         return "formulaireAjoutBalise";
     }
     

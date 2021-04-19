@@ -35,7 +35,7 @@
         <input type="text" th:field="*{num}" placeholder="0000000000"/>
         <label for="personne">Appartient à :</label>
         <select for="personne" th:field="*{personne}">
-          <option th:each="a: ${personnes}" th:value="${a.id_Personne}" th:text="${a.nom}"></option>
+          <option th:each="a: ${personnes}" th:value="${a.id_Personne}" th:text="${a.nom}+' '+${a.prenom}"></option>
         </select>
         <input type="submit" value="Enregistrer" />
     </form>

@@ -77,4 +77,6 @@ public class SiteController {
     public String AffichelaPersonneSurLaCarte(Personne personne) {
         return  "redirect:plan?salle="+salleDAO.getNumSalleEnFonctionDePersonne(personne.getId_Personne())+"";
     }
+    
+    
 }

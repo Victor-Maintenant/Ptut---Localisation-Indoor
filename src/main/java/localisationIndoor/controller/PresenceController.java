@@ -32,6 +32,8 @@ public class PresenceController {
 	 * @param beacon la balise (transmettre la clé)
 	 * @return le nouveau passage en JSON (pour info)
 	 */
+        
+        
         @GetMapping(path = "/presence")
 	public String affichePhoneDetected (Model model) {
             model.addAttribute("passages", passageDAO.findAll());
