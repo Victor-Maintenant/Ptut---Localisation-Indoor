@@ -3,11 +3,10 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Localisation Indoor</title>
+    <title>Ajouter une balise</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/location.ico" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/formulaires.css}" href="../static/css/formulaires.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <script type="module" src="ecole3D.js"></script>
 
@@ -28,35 +27,19 @@
     </nav>
 
 
-    <h1>Ajout d'une Balise</h1>
+    <h1>Ajouter une balise</h1>
 
     <form th:object="${balise}" method="POST" th:action="@{save}">
-        <label for="num">Num:</label>
+        <label for="num">Numéro :</label>
         <input type="text" th:field="*{num}" placeholder="Nom"/>
-        <label for="num">Salle:</label>
+        <br/><br/>
+        <label for="num">Salle :</label>
         <select for="salle" th:field="*{salle}">
           <option th:each="a: ${salles}" th:value="${a.id_Salle}" th:text="${a.num}"></option>
         </select>
+        <br/><br/>
         <input type="submit" value="Enregistrer" />
     </form>
-
-
-    <div class="footer-basic">
-        <footer>
-            <div class="social">
-                <div class="social">
-                    <a href="https://www.instagram.com/isis_ingenieur/"><i class="icon ion-social-instagram"></i></a>
-                    <a href="https://twitter.com/isis_ingenieur"><i class="icon ion-social-twitter"></i></a>
-                    <a href="https://www.facebook.com/isis.castres/"><i class="icon ion-social-facebook"></i></a>
-                    <a href="https://github.com/Victor-Maintenant/Ptut---Localisation-Indoor"><i class="icon ion-social-github"></i></a>
-                </div>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="accueil.html">Accueil</a></li>
-                    <li class="list-inline-item"><a href="https://isis.univ-jfc.fr/">ISIS</a></li>
-                    <li class="list-inline-item"><a href="https://www.gouvernement.fr/info-coronavirus">Actualités Coronavirus</a></li>
-                </ul>
-        </footer>
-        </div>
 
         <div class="main">
         </div>
