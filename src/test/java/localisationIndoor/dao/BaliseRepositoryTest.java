@@ -5,14 +5,12 @@ import localisationIndoor.entity.Balise;
 import localisationIndoor.entity.Passage;
 import localisationIndoor.entity.Salle;
 import localisationIndoor.entity.Telephone;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import org.springframework.test.context.jdbc.Sql;
 
 
 @Log4j2
@@ -54,6 +52,6 @@ public class BaliseRepositoryTest {
         log.info("On compte combien de personne se trouve dans une salle de t à t-5 minutes");
         assertEquals(2, b1.getNbPersonneDansChaqueSalle());
         assertEquals(2, b2.getNbPersonneDansChaqueSalle());
-        assertEquals(3, b3.getNbPersonneDansChaqueSalle());
+        assertEquals(2, b3.getNbPersonneDansChaqueSalle());
     }
 }
