@@ -3,11 +3,10 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Localisation Indoor</title>
+    <title>Ajouter une personne</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/location.ico" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/formulaires.css}" href="../static/css/formulaires.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <script type="module" src="ecole3D.js"></script>
 
@@ -28,52 +27,41 @@
     </nav>
 
 
-    <h1>Ajout de Personne</h1>
+    <h1>Ajouter une personne</h1>
 
     <form th:object="${personne}" method="POST" th:action="@{save}">
-        <label for="nom">Nom:</label>
+        <label for="nom">Nom :</label>
         <input type="text" th:field="*{nom}" placeholder="Nom"/>
-        <label for="prenom">Prenom:</label>
+        <br/><br/>
+        <label for="prenom">Prénom :</label>
         <input type="text" th:field="*{prenom}" placeholder="Prenom"/>
-        <label for="sexe">Genre:</label>
-        <input list="listeGenre" type="text" th:field="*{sexe}" placeholder="Nom"/>
+        <br/><br/>
+        <label for="sexe">Genre :</label>
+        <input list="listeGenre" type="text" th:field="*{sexe}" placeholder="Homme"/>
         <datalist id="listeGenre">
             <option value="Homme"/>
             <option value="Femme"/>
             <option value="Neutre"/>
         </datalist>
+        <br/><br/>
         <label for="age">Age:</label>
         <input type="number" th:field="*{age}" placeholder="0~99"/>
+        <br/><br/>
         <label for="adresse">Adresse:</label>
         <input type="text" th:field="*{adresse}" placeholder="1 rue de la boulangerie"/>
+        <br/><br/>
         <label for="ville">Ville:</label>
         <select for="ville" th:field="*{ville}">
           <option th:each="v: ${villes}" th:value="${v.id_Ville}" th:text="${v.nom}"></option>
         </select>
+        <br/><br/>
         <label for="type">Type de Personnel:</label>
         <select for="type" th:field="*{type}">
           <option th:each="t: ${typeP}" th:value="${t.id_Type}" th:text="${t.libelle}"></option>
         </select>
+        <br/><br/>
         <input type="submit" value="Enregistrer" />
     </form>
-
-
-    <div class="footer-basic">
-        <footer>
-            <div class="social">
-                <div class="social">
-                    <a href="https://www.instagram.com/isis_ingenieur/"><i class="icon ion-social-instagram"></i></a>
-                    <a href="https://twitter.com/isis_ingenieur"><i class="icon ion-social-twitter"></i></a>
-                    <a href="https://www.facebook.com/isis.castres/"><i class="icon ion-social-facebook"></i></a>
-                    <a href="https://github.com/Victor-Maintenant/Ptut---Localisation-Indoor"><i class="icon ion-social-github"></i></a>
-                </div>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="accueil.html">Accueil</a></li>
-                    <li class="list-inline-item"><a href="https://isis.univ-jfc.fr/">ISIS</a></li>
-                    <li class="list-inline-item"><a href="https://www.gouvernement.fr/info-coronavirus">Actualités Coronavirus</a></li>
-                </ul>
-        </footer>
-        </div>
 
         <div class="main">
         </div>
