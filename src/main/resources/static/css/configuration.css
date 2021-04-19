@@ -90,3 +90,11 @@ input[type="button"]:hover {
 input[type="button"]:active {
     transform: translateY(4px);
 }
+
+table{
+    margin:auto;
+}
+
+td{
+    padding:5px;
+}
