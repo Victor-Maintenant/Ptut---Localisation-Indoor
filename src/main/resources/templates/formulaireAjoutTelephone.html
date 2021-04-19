@@ -32,7 +32,7 @@
 
     <form th:object="${telephone}" method="POST" th:action="@{save}">
         <label for="num">Numéro:</label>
-        <input type="text" th:field="*{num}" placeholder="Nom"/>
+        <input type="text" th:field="*{num}" placeholder="0000000000"/>
         <label for="personne">Appartient à :</label>
         <select for="personne" th:field="*{personne}">
           <option th:each="a: ${personnes}" th:value="${a.id_Personne}" th:text="${a.nom}"></option>
