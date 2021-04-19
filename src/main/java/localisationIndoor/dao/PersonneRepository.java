@@ -13,31 +13,38 @@ public interface PersonneRepository extends JpaRepository<Personne, Integer> {
             value = "SELECT * FROM PERSONNE WHERE age = :age",
             nativeQuery = true)
     public List<Personne> getPersonneByAge(int age);
-    
+
     @Query(
             value = "SELECT * FROM PERSONNE WHERE nom = :nom",
             nativeQuery = true)
     public List<Personne> getPersonneByNom(String nom);
-    
+
     @Query(
             value = "SELECT * FROM PERSONNE WHERE sexe = :sexe",
             nativeQuery = true)
     public List<Personne> getPersonneByGenre(String sexe);
-    
+
     @Query(
-            value = "SELECT * FROM PERSONNE join TYPE_PERSONNE "+
-                    "on PERSONNE.type_id_type = TYPE_PERSONNE.id_Type "+
-                    "WHERE libelle = :type",
+            value = "SELECT * FROM PERSONNE join TYPE_PERSONNE "
+            + "on PERSONNE.type_id_type = TYPE_PERSONNE.id_Type "
+            + "WHERE libelle = :type",
             nativeQuery = true)
     public List<Personne> getPersonneByType(String type);
-    
+
     @Query(
             value = "SELECT id_Personne FROM PERSONNE WHERE nom = :nom and prenom = :prenom",
             nativeQuery = true)
     public int getPersonneByNomPrenom(String nom, String prenom);
-    
+
     @Query(
             value = "SELECT nom FROM PERSONNE",
             nativeQuery = true)
     public List<String> getNoms();
+
+    @Query(
+            value = "Select * from PERSONNE p where not exists "
+            + "(Select * from TELEPHONE t "
+            + "where p.id_Personne = t.personne_id_personne)",
+            nativeQuery = true)
+    public List<Personne> getPersonneSansTel();
 }

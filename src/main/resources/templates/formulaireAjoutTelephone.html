@@ -35,7 +35,7 @@
         <br/><br/>
         <label for="personne">Propriétaire :</label>
         <select for="personne" th:field="*{personne}">
-          <option th:each="a: ${personnes}" th:value="${a.id_Personne}" th:text="${a.nom}"></option>
+          <option th:each="a: ${personnes}" th:value="${a.id_Personne}" th:text="${a.nom}+' '+${a.prenom}"></option>
         </select>
         <br/><br/>
         <input type="submit" value="Enregistrer" />

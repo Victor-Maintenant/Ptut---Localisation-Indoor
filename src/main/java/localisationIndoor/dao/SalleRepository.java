@@ -7,16 +7,16 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 public interface SalleRepository extends JpaRepository<Salle, Integer> {
-    
+
     @Query(
             value = "SELECT id_Salle FROM SALLE",
             nativeQuery = true)
-    public List<Integer> getIdSalle(); 
-    
+    public List<Integer> getIdSalle();
+
     @Query(
             value = "SELECT max_Per FROM SALLE WHERE id_Salle = :id",
             nativeQuery = true)
-    public int getNbMaxPersonneSalle(int id); 
+    public int getNbMaxPersonneSalle(int id);
 
     @Query(
             value = "SELECT SALLE.num from SALLE "
@@ -27,4 +27,11 @@ public interface SalleRepository extends JpaRepository<Salle, Integer> {
             + "ORDER BY A desc LIMIT 1",
             nativeQuery = true)
     public String getNumSalleEnFonctionDePersonne(int id);
+
+    @Query(
+            value = "Select * from SALLE s where not exists "
+            + "(Select * from BALISE b "
+            + "where s.id_Salle = b.salle_id_salle)",
+            nativeQuery = true)
+    public List<Salle> getSalleSansBalise();
 }
