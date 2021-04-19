@@ -37,10 +37,15 @@ public class Balise {
 
     public int getNbPersonneDansChaqueSalle() {
         int nbPer = 0;
+        Set<Integer> personneDejaVu = new HashSet<>();
         for (Passage passage : this.passages) {
             if (passage.getA().isBefore(LocalDateTime.now()) || passage.getA().equals(LocalDateTime.now())) {
                 if ((passage.getA().isAfter(LocalDateTime.now().minusMinutes(5)))) {
-                    nbPer += 1;
+                    if(!personneDejaVu.contains(passage.getTelephone().getId_Telephone())){
+                        personneDejaVu.add(passage.getTelephone().getId_Telephone());
+                        nbPer += 1;
+                    }
+                    
                 }
             }
         }

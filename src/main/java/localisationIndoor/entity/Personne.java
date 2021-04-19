@@ -30,5 +30,4 @@ public class Personne {
     
     @OneToOne
     private Telephone telephone;
-   
 }
