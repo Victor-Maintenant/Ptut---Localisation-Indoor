@@ -48,7 +48,7 @@ public class VilleController {
      * @return le nom de la vue à afficher 
      */
     @GetMapping(path = "add")
-    public String montreLeFormulairePourAjoutVille(@ModelAttribute("ville") Ville ville, Model model) {
+    public String montreLeFormulairePourAjoutVille(@ModelAttribute("ville") Ville ville) {
         return "formulaireAjoutVille";
     }
     

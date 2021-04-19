@@ -2,7 +2,6 @@ package localisationIndoor.controller;
 
 import localisationIndoor.dao.BaliseRepository;
 import localisationIndoor.entity.Balise;
-import localisationIndoor.entity.Salle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import localisationIndoor.dao.BatimentRepository;
+import localisationIndoor.dao.SalleRepository;
 
 @Controller
 @RequestMapping(path = "/balise")
@@ -22,7 +21,7 @@ public class BaliseController {
     @Autowired
     private BaliseRepository baliseDAO;
     @Autowired
-    private BatimentRepository salleDAO;
+    private SalleRepository salleDAO;
     
     /**
      * Affiche toutes les catégories dans la base

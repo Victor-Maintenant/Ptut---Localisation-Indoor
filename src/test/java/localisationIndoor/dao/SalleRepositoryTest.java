@@ -32,4 +32,11 @@ public class SalleRepositoryTest {
         log.info("On récupère le nombre max de personn dans une salle donné");
         assertEquals(20, salleDAO.getNbMaxPersonneSalle(1));
     }
+    
+    @Test
+    @Sql("test-SQL.sql")
+    public void recupererLaSallePourUnePersonneDonnee() {
+        log.info("On récupère la salle de la présence de la personne");
+        assertEquals("A001", salleDAO.getNumSalleEnFonctionDePersonne(1));
+    }
 }
