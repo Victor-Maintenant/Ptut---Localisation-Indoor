@@ -179,11 +179,3 @@ function afficheTrajet(event) {
 	paper.view.draw();
 }
 
-document.addEventListener(
-  "click",
-  function (ev) {
-    console.log('X :' + ev.clientX)
-    console.log('Y :' + ev.clientY)
-  },
-  false
-);
