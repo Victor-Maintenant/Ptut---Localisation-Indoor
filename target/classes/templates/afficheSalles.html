@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Liste des salles</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../static/css/style.css"/>    
+    </head>
+    <body>
+        <h1>Les salles</h1>
+        <a th:href="@{add}" href="formulaireAjoutSalle.html">Ajouter une salle</a>
+        <br/><br/>
+        <table>
+            <thead>
+                <tr>
+                    <th>Numéro</th>
+                    <th>Nombre maximal de personnes</th>
+                    <th>Bâtiment</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="s: ${salles}">
+                    <td th:text="${s.num}"></td>
+                    <td th:text="${s.max_Per}"></td>
+                    <td th:text="${s.batiment.nom}"></td>
+                    <td><a th:href="@{delete(id=${s.id_Salle})}">Supprimer</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+        <a th:href="@{/configuration}" href="configuration.html">Retour au menu</a>
+    </body>
+</html>

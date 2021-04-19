@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Liste des bâtiments</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../static/css/style.css"/>    
+    </head>
+    <body>
+        <h1>Les bâtiments</h1>
+        <a th:href="@{add}" href="formulaireAjoutBatiment.html">Ajouter un bâtiment</a>
+        <br/><br/>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Adresse</th>
+                    <th>Ville</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="bs: ${batiments}">
+                    <td th:text="${b.nom}"></td>
+                    <td th:text="${b.adresse}"></td>
+                    <td th:text="${b.ville.nom}"></td>
+                    <td><a th:href="@{delete(id=${b.id_Batiment})}">Supprimer</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+        <a th:href="@{/configuration}" href="configuration.html">Retour au menu</a>
+    </body>
+</html>

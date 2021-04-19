@@ -1,0 +1,4 @@
+localisationIndoor\dao\PersonneRepositoryTest.class
+localisationIndoor\dao\TypePersonneRepositoryTest.class
+localisationIndoor\dao\SalleRepositoryTest.class
+localisationIndoor\dao\BaliseRepositoryTest.class

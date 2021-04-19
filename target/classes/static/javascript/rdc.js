@@ -10,3 +10,9 @@ $('#mybtn').click(function(){
         selected: true
     });
 });
+
+window.addEventListener("load", afficheNbPersonnes);
+function afficheNbPersonnes(){
+    let data = personnesParSalle;
+    console.log(data);
+}

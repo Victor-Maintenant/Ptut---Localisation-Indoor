@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Localisation Indoor</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/location.ico" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/passage.css}" href="css/passage.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a class="active" th:href="@{/accueil}" href="accueil.html">Accueil</a></li>
+            <li><a th:href="@{/configuration}" href="configuration.html">Configuration application</a></li>
+            <li><a href="#">Plan général des locaux</a>
+            <ul class="sous">
+                <li><a th:href="@{/plan}" href="plan.html">Afficher le plan et le taux d'occupation</a></li>
+                <li><a th:href="@{/itineraire}" href="itineraire.html">Rechercher un itinéraire</a></li>
+            </ul></li>
+            <li><a th:href="@{/rechercherPersonne}" href="rechercherPersonne.html">Rechercher une personne</a></li>
+        </ul>
+    </nav>
+
+
+    <h1>Créer des présence aléatoire</h1>
+    <div class="scroller">
+    <table>
+            <thead>
+                <tr>
+                    <th>Personne</th>
+                    <th>Salle</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="p: ${passages}">
+                    <td th:text="${p.telephone.personne.nom}+' '+${p.telephone.personne.prenom}"></td>
+                    <td th:text="${p.balise.salle.num}"></td>
+                    <td th:text="${p.a}"></td>
+                    <td><a th:href="@{delete(id=${p.id})}">Supprimer</a></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+
+    <div class="footer-basic">
+        <footer>
+            <div class="social">
+                <div class="social">
+                    <a href="https://www.instagram.com/isis_ingenieur/"><i class="icon ion-social-instagram"></i></a>
+                    <a href="https://twitter.com/isis_ingenieur"><i class="icon ion-social-twitter"></i></a>
+                    <a href="https://www.facebook.com/isis.castres/"><i class="icon ion-social-facebook"></i></a>
+                    <a href="https://github.com/Victor-Maintenant/Ptut---Localisation-Indoor"><i class="icon ion-social-github"></i></a>
+                </div>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="accueil.html">Accueil</a></li>
+                    <li class="list-inline-item"><a href="https://isis.univ-jfc.fr/">ISIS</a></li>
+                    <li class="list-inline-item"><a href="https://www.gouvernement.fr/info-coronavirus">Actualités Coronavirus</a></li>
+                </ul>
+        </footer>
+        </div>
+
+        <div class="main">
+        </div>
+</body>
+
+</html>

@@ -1,5 +1,8 @@
 localisationIndoor\controller\PresenceController.class
+localisationIndoor\controller\BatimentController.class
+localisationIndoor\controller\TelephoneController.class
 localisationIndoor\controller\PersonneController.class
+localisationIndoor\controller\VilleController.class
 localisationIndoor\entity\Telephone.class
 localisationIndoor\entity\Balise.class
 localisationIndoor\entity\Plan.class
@@ -7,7 +10,12 @@ localisationIndoor\entity\Salle.class
 localisationIndoor\entity\Batiment.class
 localisationIndoor\dao\PersonneRepository.class
 localisationIndoor\dao\TypePersonneRepository.class
+localisationIndoor\controller\BaliseController.class
+localisationIndoor\controller\SalleController.class
 localisationIndoor\dao\SalleRepository.class
+localisationIndoor\dao\BatimentRepository.class
+localisationIndoor\dao\TelephoneRepository.class
+localisationIndoor\controller\TypePersonneController.class
 localisationIndoor\entity\Passage.class
 localisationIndoor\dao\BaliseRepository.class
 localisationIndoor\dao\PassageRepository.class
@@ -15,4 +23,5 @@ localisationIndoor\entity\Type_Personne.class
 localisationIndoor\WebApp.class
 localisationIndoor\entity\Personne.class
 localisationIndoor\controller\SiteController.class
+localisationIndoor\dao\VilleRepository.class
 localisationIndoor\entity\Ville.class
