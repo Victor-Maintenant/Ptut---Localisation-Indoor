@@ -40,10 +40,12 @@ public class PresenceController {
             return "presence";
 	}
 	
-        @Scheduled(fixedDelay = 30000)
+        @Scheduled(cron = "01 * * * * * ")
         public void ajouPhoneDetected(){
-            Optional<Telephone> tel = telDAO.findById(1 + (int)(Math.random()*((telDAO.count() - 1) + 1)));
-            Optional<Balise> balise = baliseDAO.findById(1 + (int)(Math.random()*((baliseDAO.count() - 1) + 1)));
+            Optional<Telephone> tel = 
+                telDAO.findById(1 + (int)(Math.random()*((telDAO.count() - 1) + 1)));
+            Optional<Balise> balise = 
+                baliseDAO.findById(1 + (int)(Math.random()*((baliseDAO.count() - 1) + 1)));
             Passage nouveau = new Passage(tel.get(), balise.get());
             passageDAO.save(nouveau);
             nouveau.addPassageDansBalise();

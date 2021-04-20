@@ -22,21 +22,21 @@ public class PersonneRepositoryTest {
     @Sql("test-SQL.sql")
     public void recupererDesPersonnesEnFonctionDeLAge() {
         log.info("On compte combien de personne on récupère avec un age déterminé");
-        assertEquals(1, (persoDAO.getPersonneByAge(22)).size());
+        assertEquals(1, (persoDAO.getPersonneByNomPrenom("Maintenant", "Victor")).size());
     }
     
     @Test
     @Sql("test-SQL.sql")
     public void recupererDesPersonnesEnFonctionDuGenre() {
         log.info("On compte combien de personne on récupère avec un genre déterminé");
-        assertEquals(1, (persoDAO.getPersonneByGenre("Homme")).size());
+        assertEquals(3, (persoDAO.getNoms()).size());
     }
     
     @Test
     @Sql("test-SQL.sql")
     public void recupererDesPersonnesEnFonctionDuNom() {
         log.info("On compte combien de personne on récupère avec un nom déterminé");
-        assertEquals(1, (persoDAO.getPersonneByNom("Gauthier")).size());
+        assertEquals(0, (persoDAO.getPersonneSansTel()).size());
     }
     
     @Test

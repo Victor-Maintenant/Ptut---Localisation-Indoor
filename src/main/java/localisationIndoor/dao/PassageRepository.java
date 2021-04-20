@@ -7,7 +7,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 public interface PassageRepository extends JpaRepository<Passage, Integer> {
    
-    @Scheduled(cron="00 00 * * * *")
     @Query(value = "delete from PASAGGE",
            nativeQuery = true)
     public void supprmerLesPrésenceDeLaJournee();

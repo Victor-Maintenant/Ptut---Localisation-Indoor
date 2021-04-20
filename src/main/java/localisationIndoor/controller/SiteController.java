@@ -53,10 +53,8 @@ public class SiteController {
         List<String> salles = new LinkedList<>();
         List<Integer> personnesSalle = new LinkedList<>();
         List<Integer> maxPer = new LinkedList<>();
-        
         List<Passage> passages = new LinkedList<>();
         passages = passageDAO.findAll();
-        
         List<Balise> balises = new LinkedList<>();
         balises = baliseDAO.findAll();
         for(Passage p : passages){
@@ -87,7 +85,8 @@ public class SiteController {
     
     @PostMapping(path = "affichage")
     public String AffichelaPersonneSurLaCarte(Personne personne) {
-        return  "redirect:planDonnees?salle="+salleDAO.getNumSalleEnFonctionDePersonne(personne.getId_Personne())+"";
+        return  "redirect:planDonnees?salle="+
+            salleDAO.getNumSalleEnFonctionDePersonne(personne.getId_Personne())+"";
     }
     
     
