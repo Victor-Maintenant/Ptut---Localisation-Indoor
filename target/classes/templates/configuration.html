@@ -4,31 +4,103 @@
 <head>
     <meta charset="UTF-8" />
     <title>Configuration</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/configuration.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/configuration.css}" href="../static/css/configuration.css" />
 </head>
 
 <body>
     <nav>
         <ul>
-            <li><a href="accueil.html">Accueil</a></li>
-            <li><a class="active" href="configuration.html">Configurer les balises</a></li>
+            <li><a class="active" th:href="@{/accueil}" href="accueil.html">Accueil</a></li>
+            <li><a th:href="@{/configuration}" href="configuration.html">Configuration application</a></li>
             <li><a href="#">Plan général des locaux</a>
-            <ul class="sous">
-                <li><a  href="plan.html">Afficher le plan et le taux d'occupation</a></li>
-                <li><a href="itineraire.html">Rechercher un itinéraire</a></li>
-            </ul></li>
-            <li><a href="rechercherPersonne.html">Rechercher une personne</a></li>
+                <ul class="sous">
+                    <li><a th:href="@{/plan}" href="plan.html">Afficher le plan</a></li>
+                    <li><a th:href="@{/itineraire}" href="itineraire.html">Rechercher un itinéraire</a></li>
+                    <li><a th:href="@{/planDonnees}" href="planDonnees.html">Affichage du plan avec les Données</a></li>
+                </ul>
+            </li>
+            <li><a th:href="@{/rechercherPersonne}" href="rechercherPersonne.html">Rechercher une personne</a></li>
         </ul>
     </nav>
-    <h1>Configurer les balises</h1>
-    <br/>
-    <input type="button" value="Afficher la liste des plans" id="ListePlans" />
-    <input type="button" value="Ajouter un plan" id="AjoutPlan" />
-    <input type="button" value="Supprimer un plan" id="SuppressionPlan" />
-    <br/><br/><br/>
-    <input type="button" value="Afficher la liste des salles" id="ListeSalles" />
-    <input type="button" value="Ajouter une salle" id="AjoutSalle" />
-    <input type="button" value="Supprimer une salle" id="SuppressionSalle" />
+    <h1>Configuration application</h1>
+    <br />
+    <table>
+        <tr>
+            <td>
+                <a th:href="@{ville/show}" href="afficheVilles.html"><input type="button" value="Afficher la liste des villes"
+                    id="ListeVilles"></a>
+            </td>
+            <td><a th:href="@{ville/add}" href="formulaireAjoutVille.html"><input type="button" value="Ajouter une ville"
+                id="AjoutVille"></a></td>
+        </tr>
+        <tr>
+            <td><a th:href="@{plan/show}" href="affichePlans.html"><input type="button" value="Afficher la liste des plans"
+                id="ListePlans"></a></td>
+            <td><a th:href="@{plan/add}" href="formulaireAjoutSalle.html"><input type="button" value="Ajouter un plan"
+                id="AjoutPlan"></a></td>
+        </tr>
+        <tr>
+            <td>
+                <a th:href="@{salle/show}" href="afficheSalles.html"><input type="button" value="Afficher la liste des salles"
+                    id="ListeSalles"></a>
+            </td>
+            <td>
+                <a th:href="@{salle/add}" href="formulaireAjoutSalle.html"><input type="button" value="Ajouter une salle"
+                    id="AjoutSalle"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a th:href="@{balise/show}" href="afficheBalises.html"><input type="button" value="Afficher la liste des balises"
+                    id="ListeBalises"></a>
+            </td>
+            <td>
+                <a th:href="@{balise/add}" href="formulaireAjoutBalise.html"><input type="button" value="Ajouter une balise"
+                    id="AjoutBalise"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a th:href="@{personne/show}" href="affichePersonnes.html"><input type="button"
+                    value="Afficher la liste des personnes" id="ListePersonnes"></a>
+            </td>
+            <td>
+                <a th:href="@{personne/add}" href="formulaireAjoutPersonne.html"><input type="button" value="Ajouter une personne"
+                    id="AjoutPersonne" /></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a th:href="@{typePersonne/show}" href="afficheTypesPersonnes.html"><input type="button"
+                    value="Afficher la liste des types de personnes" id="ListeTypesPersonne"></a>
+            </td>
+            <td>
+                <a th:href="@{typePersonne/add}" href="formulaireAjoutTypePersonne.html"><input type="button"
+                    value="Ajouter un type de personne" id="AjouTP"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a th:href="@{batiment/show}" href="afficheBatiments.html"><input type="button"
+                    value="Afficher la liste des batiments" id="ListeBatiments"></a>
+            </td>
+            <td>
+                <a th:href="@{batiment/add}" href="formulaireAjoutBatiment.html"><input type="button" value="Ajouter un batiment"
+                    id="AjoutBatiment"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a th:href="@{telephone/show}" href="afficheTelephones.html"><input type="button"
+                    value="Afficher la liste des téléphones" id="ListeTelephones"></a>
+            </td>
+            <td>
+                <a th:href="@{telephone/add}" href="formulaireAjoutTelephone.html"><input type="button" value="Ajouter un téléphone"
+                id="AjoutTelephone"></a>
+            </td>
+        </tr>
+    </table> 
+  <a th:href="@{presence}" href="presence.html"><input type="button" value="Affiche Passage" id="AffichePassage"/></a>
+    
 </body>
-
 </html>

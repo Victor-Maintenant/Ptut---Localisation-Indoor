@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Ajouter une salle</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/location.ico" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/formulaires.css}" href="../static/css/formulaires.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <script type="module" src="ecole3D.js"></script>
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a class="active" th:href="@{/accueil}" href="accueil.html">Accueil</a></li>
+            <li><a th:href="@{/configuration}" href="configuration.html">Configuration application</a></li>
+            <li><a href="#">Plan général des locaux</a>
+            <ul class="sous">
+                <li><a th:href="@{/plan}" href="plan.html">Afficher le plan</a></li>
+                <li><a th:href="@{/itineraire}" href="itineraire.html">Rechercher un itinéraire</a></li>
+                <li><a th:href="@{/planDonnees}" href="planDonnees.html">Affichage du plan avec les Données</a></li>
+            </ul></li>
+            <li><a th:href="@{/rechercherPersonne}" href="rechercherPersonne.html">Rechercher une personne</a></li>
+        </ul>
+    </nav>
+
+
+    <h1>Ajouter une salle</h1>
+
+    <form th:object="${salle}" method="POST" th:action="@{save}">
+        <label for="num">Numéro :</label>
+        <input List="salleNum" type="text" th:field="*{num}" placeholder="salleB008"/>
+            <datalist id="salleNum">
+                <option value="grandAuditorium">
+                <option value="petitAuditorium">
+                <option value="toiletteHomme">
+                <option value="toiletteFemme">
+                <option value="cafeteria">
+                <option value="foyer">
+                <option value="bureauA005">
+                <option value="bureauA009">
+                <option value="bureauA011">
+                <option value="bureauA013">
+                <option value="bureauA001">
+                <option value="bureauA010">
+                <option value="connectedHealthLab">
+                <option value="salleB101">
+                <option value="salleB106">
+                <option value="salleB103">
+                <option value="salleB106">
+            </datalist>
+        <br/><br/>
+        <label for="maxPer">Nombre de personne maximal :</label>
+        <input type="number" th:field="*{max_Per}" placeholder="0~99"/>
+        <br/><br/>
+        <label for="nom">Type de Personnel :</label>
+        <select for="batiment" th:field="*{batiment}">
+          <option th:each="a: ${batiments}" th:value="${a.id_Batiment}" th:text="${a.nom}"></option>
+        </select>
+        <br/><br/>
+        <input type="submit" value="Enregistrer" />
+    </form>
+
+        <div class="main">
+        </div>
+
+</body>
+
+</html>

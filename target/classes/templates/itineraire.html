@@ -4,24 +4,65 @@
 <head>
     <meta charset="UTF-8" />
     <title>Itinéraire</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/itineraire.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/itineraire.css}" href="../satic/css/itineraire.css" />
+    <script type="text/javascript" th:src="@{/paperjs/paper-full.js}" src="paperjs/paper-full.js"></script>
+    <!-- Load external PaperScript and associate it with myCanvas -->
+    
+    <script type="text/paperscript" src="javascript/paper.js" canvas="canvasA"></script>
 </head>
 
 <body>
     <nav>
         <ul>
-            <li><a href="accueil.html">Accueil</a></li>
-            <li><a href="configuration.html">Configurer les balises</a></li>
+            <li><a class="active" th:href="@{/accueil}" href="accueil.html">Accueil</a></li>
+            <li><a th:href="@{/configuration}" href="configuration.html">Configuration application</a></li>
             <li><a href="#">Plan général des locaux</a>
             <ul class="sous">
-                <li><a  href="plan.html">Afficher le plan et le taux d'occupation</a></li>
-                <li><a class="active" href="itineraire.html">Rechercher un itinéraire</a></li>
+                <li><a th:href="@{/plan}" href="plan.html">Afficher le plan</a></li>
+                <li><a th:href="@{/itineraire}" href="itineraire.html">Rechercher un itinéraire</a></li>
+                <li><a th:href="@{/planDonnees}" href="planDonnees.html">Affichage du plan avec les Données</a></li>
             </ul></li>
-            <li><a href="rechercherPersonne.html">Rechercher une personne</a></li>
+            <li><a th:href="@{/rechercherPersonne}" href="rechercherPersonne.html">Rechercher une personne</a></li>
         </ul>
     </nav>
-
+    
+    <canvas id="myCanvas" resize></canvas>
+    <canvas id="canvasA" resize></canvas>
+    
     <h1>Rechercher un itinéraire</h1>
+    
+    <img id="map" th:src="@{/images/isisRDC.png}" src="../static/images/isisRDC.png" >
+    <form id="formTrajet">
+        
+              <legend>Itinéraire entre deux salles</legend>
+              <select id="salle1" placeholder="Salle Départ" type="text" >
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>G</option>
+                    <option>H</option>
+                    <option>I</option>
+                    <option>J</option>
+              </select>
+              <select id="salle2" placeholder="Salle Arrivée" type="text" >
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>G</option>
+                    <option>H</option>
+                    <option>I</option>
+                    <option>J</option>
+              <select/>
+              <input type="submit" />   
+        
+    </form>
+    <script type="text/javascript" src="javascript/paperDijsktra.js" canvas="myCanvas"></script>
 </body>
 
 </html>

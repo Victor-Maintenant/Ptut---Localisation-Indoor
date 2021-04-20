@@ -4,20 +4,23 @@
 <head>
     <meta charset="UTF-8" />
     <title>Rechercher une personne</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/rechercherPersonne.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/rechercherPersonne.css}" href="../static/css/rechercherPersonne.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/map.ico" />
+
 </head>
 
 <body>
     <nav>
         <ul>
-            <li><a href="accueil.html">Accueil</a></li>
-            <li><a href="configuration.html">Configurer les balises</a></li>
+            <li><a class="active" th:href="@{/accueil}" href="accueil.html">Accueil</a></li>
+            <li><a th:href="@{/configuration}" href="configuration.html">Configuration application</a></li>
             <li><a href="#">Plan général des locaux</a>
             <ul class="sous">
-                <li><a href="plan.html">Afficher le plan et le taux d'occupation</a></li>
-                <li><a href="itineraire.html">Rechercher un itinéraire</a></li>
+                <li><a th:href="@{/plan}" href="plan.html">Afficher le plan</a></li>
+                <li><a th:href="@{/itineraire}" href="itineraire.html">Rechercher un itinéraire</a></li>
+                <li><a th:href="@{/planDonnees}" href="planDonnees.html">Affichage du plan avec les Données</a></li>
             </ul></li>
-            <li><a class="active" href="rechercherPersonne.html">Rechercher une personne</a></li>
+            <li><a th:href="@{/rechercherPersonne}" href="rechercherPersonne.html">Rechercher une personne</a></li>
         </ul>
     </nav>
     <h1>Rechercher une personne</h1>
@@ -33,21 +36,21 @@
         </br>
         </br>
     </div>
-    <form method="post">
+    <form th:object="${personne}" method="POST" th:action="@{affichage}">
         <label for="profession">Profession :</label>
         <select name="profession" id="profession">
         </select>
         </br>
         </br>
-        <label for="nom">Nom :</label>
-        <input type="text" name="nom" id="nom" />
+        <label for="nom">Nom:</label>
+        <select for="nom" th:field="*{id_Personne}" placeholder="Nom">
+            <option th:each="n: ${personnes}" th:value="${n.id_Personne}" th:text="${n.nom}+' '+${n.prenom}"></option>
+        </select>
         </br>
         </br>
-        <label for="prénom">Prénom :</label>
-        <input type="text" name="prénom" id="prénom" />
-        </br>
+        <input type="submit" value="Chercher" />
     </form>
-    <script src="rechercherPersonne.js"></script>
+    <script src="javascript/rechercherPersonne.js"></script>
 </body>
 
 </html>

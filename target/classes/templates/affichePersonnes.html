@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Liste des personnes</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../static/css/style.css"/>    
+    </head>
+    <body>
+        <h1>Les personnes</h1>
+        <a th:href="@{add}" href="formulaireAjoutPersonne.html">Ajouter une personne</a>
+        <br/><br/>  
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Sexe</th>
+                    <th>Age</th>
+                    <th>Adresse</th>
+                    <th>Type</th>
+                    <th>Ville</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="p: ${personnes}">
+                    <td th:text="${p.nom}"></td>
+                    <td th:text="${p.prenom}"></td>
+                    <td th:text="${p.sexe}"></td>
+                    <td th:text="${p.age}"></td>
+                    <td th:text="${p.adresse}"></td>
+                    <td th:text="${p.type.libelle}"></td>
+                    <td th:text="${p.ville.nom}"></td>
+                    <td><a th:href="@{delete(id=${p.id_Personne})}">Supprimer</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+        <a th:href="@{/configuration}" href="configuration.html">Retour au menu</a>
+    </body>
+</html>

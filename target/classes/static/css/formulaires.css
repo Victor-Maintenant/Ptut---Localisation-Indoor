@@ -1,0 +1,141 @@
+body {
+    text-align: center;
+    background-image: linear-gradient(rgb(210, 235, 250), rgb(184, 226, 250));
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+nav {
+    background-color: #0195f8;
+    overflow: hidden;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+nav ul li {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+nav a {
+    display: block;
+    color: #000000;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.sous {
+    display: none;
+    position: absolute;
+    background-color: #0195f8;
+    width: inherit;
+}
+
+nav>ul li:hover .sous {
+    display: block;
+}
+
+.sous a {
+    padding: 10px;
+}
+
+.sous li {
+    float: none;
+    position: relative;
+    width: 100%;
+    text-align: left;
+    text-align: center;
+}
+
+.active {
+    background-color: #2266c075;
+    color: white;
+}
+
+a:hover {
+    background-color: #016bb3;
+    color: white;
+    text-decoration: none;
+}
+
+input[type="submit"] {
+    display: inline-block;
+    background-color: #0195f8;
+    border-radius: 15px;
+    border: 4px double #2266c0;
+    padding: 10px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #016bb3;
+    border: 4px inset #056baf;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type="submit"]:active {
+    transform: translateY(4px);
+}
+
+
+input[type="button"] {
+    display: inline-block;
+    background-color: #0195f8;
+    border-radius: 15px;
+    border: 4px double #2266c0;
+    padding: 10px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #016bb3;
+    border: 4px inset #056baf;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type="button"]:active {
+    transform: translateY(4px);
+}
+
+input[type="text"] {
+    width: 150px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../images/loupe.png');
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding: 5px 10px 5px 40px;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type="text"]:focus {
+    width: 25%;
+}
+
+input[type="number"]{
+    width: 150px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding:5px;
+}

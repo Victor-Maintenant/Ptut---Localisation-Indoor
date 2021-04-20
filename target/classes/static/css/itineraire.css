@@ -11,6 +11,7 @@ body {
 }
 
 nav {
+    z-index: 3;
     background-color: #0195f8;
     overflow: hidden;
     width: 100%;
@@ -30,6 +31,7 @@ nav ul li {
 
 nav a {
     display: block;
+    z-index: 10;
     color: #000000;
     padding: 15px;
     text-decoration: none;
@@ -49,6 +51,7 @@ nav>ul li:hover .sous {
 
 .sous a {
     padding: 10px;
+    z-index: 10;
 }
 
 .sous li {
@@ -69,3 +72,31 @@ a:hover {
     color: white;
     text-decoration: none;
 }
+
+#map{
+    width: 1920px;
+    height: 1080px;
+}
+
+#myCanvas{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 1660px;
+    height: 950px;
+}
+
+#canvasA{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 1660px;
+    height: 950px;
+}
+
+#formTrajet{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
