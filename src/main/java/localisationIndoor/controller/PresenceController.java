@@ -49,4 +49,8 @@ public class PresenceController {
             nouveau.addPassageDansBalise();
         }
         
+        @Scheduled(cron ="00 00 * * * *")
+        public void viderLesPresences(){
+            passageDAO.supprmerLesPrésenceDeLaJournee();
+        }
 }

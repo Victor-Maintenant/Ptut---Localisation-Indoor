@@ -44,8 +44,14 @@ public class SiteController {
     }
     
     @GetMapping(path = "/plan")
+    public String afficheLAccueil() {
+        return "plan";
+    }
+    
+    @GetMapping(path = "/planDonnees")
     public String afficheLePlan(Model model) {
-        HashMap<String,Integer> hm = new HashMap<>();
+        HashMap<String,List<Integer>> hm = new HashMap<>();
+        List<Integer> l = new LinkedList<>();
         List<Passage> passages = new LinkedList<>();
         passages = passageDAO.findAll();
         List<Balise> balises = new LinkedList<>();
@@ -55,10 +61,12 @@ public class SiteController {
         }
         for(Balise b : balises){
             int NbPer = b.getNbPersonneDansChaqueSalle();
-            hm.put(b.getSalle().getNum(), NbPer);  
+            l.add(nbPersonne);
+            l.add(b.getSalle().getMaxPer());
+            hmPPS.put(b.getSalle().getNum(), l);  
         }
         model.addAttribute("personnesParSalles", hm);
-        return "plan";
+        return "planDonnees";
     }
     
     @GetMapping(path = "/itineraire")
@@ -75,7 +83,7 @@ public class SiteController {
     
     @PostMapping(path = "affichage")
     public String AffichelaPersonneSurLaCarte(Personne personne) {
-        return  "redirect:plan?salle="+salleDAO.getNumSalleEnFonctionDePersonne(personne.getId_Personne())+"";
+        return  "redirect:planDonnees?salle="+salleDAO.getNumSalleEnFonctionDePersonne(personne.getId_Personne())+"";
     }
     
     
