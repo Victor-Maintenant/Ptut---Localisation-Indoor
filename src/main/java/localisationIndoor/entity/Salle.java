@@ -25,4 +25,12 @@ public class Salle {
     public Salle(int id){
         this.id_Salle = id;
     }
+
+    public Integer getMaxPer() {
+        return this.max_Per;
+    }
+
+    public String getNum() {
+        return this.num;
+    }
 }
