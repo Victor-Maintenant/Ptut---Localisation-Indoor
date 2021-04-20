@@ -73,3 +73,50 @@ a:hover {
     height: 100%;
     width: 100%;
 }
+.bouton {
+    display: inline-block;
+    background-color: #0195f8;
+    border-radius: 15px;
+    border: 4px double #2266c0;
+    padding: 10px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.bouton:hover {
+    background-color: #016bb3;
+    border: 4px inset #056baf;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.bouton:active {
+    transform: translateY(4px);
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+}
+.contenuModal {
+    background-color: rgb(1, 149, 248);
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(34, 102, 192);
+    border-image: initial;
+}
+.close {
+    color: rgb(210, 235, 250);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
