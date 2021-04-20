@@ -28,7 +28,7 @@
 <input type="button" value="Aller à l'étage" id="btnEtage" class="bouton"/>
 <div id="plan">
 
-    <img id="map" src="../static/images/isisRDC.png" usemap="#image-map-rdc" class="carte">
+    <img id="map" th:src="@{/images/isisRDC.png}" src="../static/images/isisRDC.png" usemap="#image-map-rdc" class="carte">
 
     <map name="image-map-rdc">
         <area target="" alt="grandAuditorium" name="grandAuditorium" href="" coords="4178,2791,4173,3258,4223,3290,4292,3295,4608,3317,4636,3285,4668,3244,4663,2805,4649,2768,4613,2750,4288,2722,4214,2741" shape="poly">
@@ -79,7 +79,7 @@
     </div>
 </div>
 
-<script src="../static/javascript/plan.js"></script>
+<script th:src="@{/javascript/plan.js}" src="../static/javascript/plan.js"></script>
 
 </body>
 </html>

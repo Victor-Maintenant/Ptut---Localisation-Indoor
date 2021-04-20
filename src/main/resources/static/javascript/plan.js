@@ -3,7 +3,7 @@ var fermer = document.getElementById("close");
 var isRdc = true;
 var plan = document.getElementById('plan').innerHTML;
 var etage = '<div id="etage">\n' +
-    '    <img src="../static/images/isisetage.png" usemap="#image-map-etage" class="carte">\n' +
+    '    <img th:src="@{/images/isisetage.png}" src="../static/images/isisetage.png" usemap="#image-map-etage" class="carte">\n' +
     '\n' +
     '    <map name="image-map-etage">\n' +
     '        <area target="" alt="salleB101" name="salleB101" href="" coords="9672,5926,9680,6494,9956,6474,10146,6460,10299,6426,10181,5864" shape="poly">\n' +

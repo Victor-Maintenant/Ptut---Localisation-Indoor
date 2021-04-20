@@ -59,7 +59,7 @@ public class SiteController {
             hmPPS.put(b.getSalle().getNum(), NbPer);  
             hmMPS.put(b.getSalle().getNum(), salleDAO.getNbMaxPersonneSalle(b.getSalle().getId_Salle())); 
         }
-        model.addAttribute("nbPersonne", hmMPS)
+        model.addAttribute("nbPersonne", hmMPS);
         model.addAttribute("personnesParSalles", hmPPS);
         return "plan";
     }
