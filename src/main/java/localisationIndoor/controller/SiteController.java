@@ -44,12 +44,12 @@ public class SiteController {
     }
     
     @GetMapping(path = "/plan")
-    public String afficheLAccueil() {
+    public String afficheLePlan() {
         return "plan";
     }
     
     @GetMapping(path = "/planDonnees")
-    public String afficheLePlan(Model model) {
+    public String afficheLePlanDeDonnees(Model model) {
         HashMap<String,List<Integer>> hm = new HashMap<>();
         List<Integer> l = new LinkedList<>();
         List<Passage> passages = new LinkedList<>();
@@ -61,9 +61,9 @@ public class SiteController {
         }
         for(Balise b : balises){
             int NbPer = b.getNbPersonneDansChaqueSalle();
-            l.add(nbPersonne);
+            l.add(NbPer);
             l.add(b.getSalle().getMaxPer());
-            hmPPS.put(b.getSalle().getNum(), l);  
+            hm.put(b.getSalle().getNum(), l);  
         }
         model.addAttribute("personnesParSalles", hm);
         return "planDonnees";
