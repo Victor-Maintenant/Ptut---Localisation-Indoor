@@ -20,13 +20,6 @@ public class PersonneRepositoryTest {
     
     @Test
     @Sql("test-SQL.sql")
-    public void recupererDesPersonnesEnFonctionDeLAge() {
-        log.info("On compte combien de personne on récupère avec un age déterminé");
-        assertEquals(1, (persoDAO.getPersonneByNomPrenom("Maintenant", "Victor")).size());
-    }
-    
-    @Test
-    @Sql("test-SQL.sql")
     public void recupererDesPersonnesEnFonctionDuGenre() {
         log.info("On compte combien de personne on récupère avec un genre déterminé");
         assertEquals(3, (persoDAO.getNoms()).size());
