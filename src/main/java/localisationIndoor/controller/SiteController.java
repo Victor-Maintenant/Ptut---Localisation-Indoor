@@ -45,7 +45,8 @@ public class SiteController {
     
     @GetMapping(path = "/plan")
     public String afficheLePlan(Model model) {
-        HashMap<String,Integer> hm = new HashMap<>();
+        HashMap<String,Integer> hmPPS = new HashMap<>();
+        HashMap<String,Integer> hmMPS = new HashMap<>();
         List<Passage> passages = new LinkedList<>();
         passages = passageDAO.findAll();
         List<Balise> balises = new LinkedList<>();
@@ -55,9 +56,11 @@ public class SiteController {
         }
         for(Balise b : balises){
             int NbPer = b.getNbPersonneDansChaqueSalle();
-            hm.put(b.getSalle().getNum(), NbPer);  
+            hmPPS.put(b.getSalle().getNum(), NbPer);  
+            hmMPS.put(b.getSalle().getNum(), salleDAO.getNbMaxPersonneSalle(b.getSalle().getId_Salle())); 
         }
-        model.addAttribute("personnesParSalles", hm);
+        model.addAttribute("nbPersonne", hmMPS)
+        model.addAttribute("personnesParSalles", hmPPS);
         return "plan";
     }
     
