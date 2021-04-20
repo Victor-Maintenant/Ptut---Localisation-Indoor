@@ -1,0 +1,153 @@
+body {
+    text-align: center;
+    background-image: linear-gradient(rgb(210, 235, 250), rgb(184, 226, 250));
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+nav {
+    background-color: #0195f8;
+    overflow: hidden;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+nav ul li {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+nav a {
+    display: block;
+    color: #000000;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.sous {
+    display: none;
+    position: absolute;
+    background-color: #0195f8;
+    width: inherit;
+}
+
+nav>ul li:hover .sous {
+    display: block;
+}
+
+.sous a {
+    padding: 10px;
+}
+
+.sous li {
+    float: none;
+    position: relative;
+    width: 100%;
+    text-align: left;
+    text-align: center;
+}
+
+.active {
+    background-color: #2266c075;
+    color: white;
+}
+
+a:hover {
+    background-color: #016bb3;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-basic {
+    padding: 5px 0;
+    background-color: #0195f8;
+    color: black;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 13%;
+    line-height: auto;
+}
+
+.footer-basic ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+
+.footer-basic li {
+    padding: 0 10px;
+}
+
+.footer-basic ul a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer-basic ul a:hover {
+    opacity: 1;
+}
+
+.footer-basic .social {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.footer-basic .social>a {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid rgb(47, 0, 40);
+    margin: 0 8px;
+    color: inherit;
+    opacity: 0.75;
+}
+
+.footer-basic .social>a:hover {
+    opacity: 0.9;
+}
+
+td, th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align:center;
+}
+
+th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+    background-color: #0195f8;
+	color: white;
+}
+
+table{
+	margin:auto;
+}
+
+a{
+	color:#0195f8;
+}
+
+a:hover{
+	color:#016bb3;
+}

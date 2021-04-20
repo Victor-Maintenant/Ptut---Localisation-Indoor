@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Liste des téléphones</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../static/css/style.css"/>    
+    </head>
+    <body>
+        <h1>Les téléphones</h1>
+        <a th:href="@{add}" href="formulaireAjoutTelephone.html">Ajouter un téléphone</a>
+        <br/><br/>  
+        <table>
+            <thead>
+                <tr>
+                    <th>Propriétaire</th>
+                    <th>Numéro de téléphone</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="t: ${telephones}">
+                    <td th:text="${t.personne.nom}"></td>
+                    <td th:text="${t.num}"></td>
+                    <td><a th:href="@{delete(id=${t.id_Telephone})}">Supprimer</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+        <a th:href="@{/configuration}" href="configuration.html">Retour au menu</a>
+    </body>
+</html>

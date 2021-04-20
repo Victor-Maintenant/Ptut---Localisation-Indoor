@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Ajouter un téléphone</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/location.ico" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/formulaires.css}" href="../static/css/formulaires.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <script type="module" src="ecole3D.js"></script>
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a class="active" th:href="@{/accueil}" href="accueil.html">Accueil</a></li>
+            <li><a th:href="@{/configuration}" href="configuration.html">Configuration application</a></li>
+            <li><a href="#">Plan général des locaux</a>
+            <ul class="sous">
+                <li><a th:href="@{/plan}" href="plan.html">Afficher le plan</a></li>
+                <li><a th:href="@{/itineraire}" href="itineraire.html">Rechercher un itinéraire</a></li>
+                <li><a th:href="@{/planDonnees}" href="planDonnees.html">Affichage du plan avec les Données</a></li>
+            </ul></li>
+            <li><a th:href="@{/rechercherPersonne}" href="rechercherPersonne.html">Rechercher une personne</a></li>
+        </ul>
+    </nav>
+
+
+    <h1>Ajouter un téléphone</h1>
+
+    <form th:object="${telephone}" method="POST" th:action="@{save}">
+        <label for="num">Numéro :</label>
+        <input type="text" th:field="*{num}" placeholder="0000000000"/>
+        <br/><br/>
+        <label for="personne">Propriétaire :</label>
+        <select for="personne" th:field="*{personne}">
+          <option th:each="a: ${personnes}" th:value="${a.id_Personne}" th:text="${a.nom}+' '+${a.prenom}"></option>
+        </select>
+        <br/><br/>
+        <input type="submit" value="Enregistrer" />
+    </form>
+
+        <div class="main">
+        </div>
+
+</body>
+
+</html>
