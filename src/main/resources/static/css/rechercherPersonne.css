@@ -113,3 +113,23 @@ input[type="text"] {
 input[type=text]:focus {
     width: 25%;
 }
+
+input[type="submit"] {
+    display: inline-block;
+    background-color: #0195f8;
+    border-radius: 15px;
+    border: 4px double #2266c0;
+    padding: 10px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #016bb3;
+    border: 4px inset #056baf;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type="submit"]:active {
+    transform: translateY(4px);
+}
