@@ -9,26 +9,16 @@ import lombok.*;
  *
  * @author Victor Maintenant
  */
-@Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@RequiredArgsConstructor
-@ToString
+@Entity@Getter@Setter
+@NoArgsConstructor@RequiredArgsConstructor@ToString
 public class Passage {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @ManyToOne
-    @NonNull
+    @ManyToOne@NonNull
     private Telephone telephone;
-
-    @ManyToOne
-    @NonNull
+    @ManyToOne@NonNull
     private Balise balise;
-
     private LocalDateTime A = LocalDateTime.now();
 
     public Passage(int id, Telephone t, Balise b, LocalDateTime time) {

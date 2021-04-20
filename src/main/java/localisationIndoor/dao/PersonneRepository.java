@@ -10,21 +10,6 @@ import org.springframework.data.jpa.repository.Query;
 public interface PersonneRepository extends JpaRepository<Personne, Integer> {
 
     @Query(
-            value = "SELECT * FROM PERSONNE WHERE age = :age",
-            nativeQuery = true)
-    public List<Personne> getPersonneByAge(int age);
-
-    @Query(
-            value = "SELECT * FROM PERSONNE WHERE nom = :nom",
-            nativeQuery = true)
-    public List<Personne> getPersonneByNom(String nom);
-
-    @Query(
-            value = "SELECT * FROM PERSONNE WHERE sexe = :sexe",
-            nativeQuery = true)
-    public List<Personne> getPersonneByGenre(String sexe);
-
-    @Query(
             value = "SELECT * FROM PERSONNE join TYPE_PERSONNE "
             + "on PERSONNE.type_id_type = TYPE_PERSONNE.id_Type "
             + "WHERE libelle = :type",
