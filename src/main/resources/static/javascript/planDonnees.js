@@ -10,3 +10,9 @@ $('#mybtn').click(function(){
         selected: true
     });
 });
+
+if (urlParams.has('salle') === true){ 
+    console.log(urlParams.get('salle'))
+    // select all New England states
+    $('img').mapster('set',true,urlParams.get('salle'));
+}
