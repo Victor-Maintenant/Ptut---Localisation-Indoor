@@ -17,7 +17,7 @@
             <li><a th:href="@{/configuration}" href="configuration.html">Configuration application</a></li>
             <li><a href="#">Plan général des locaux</a>
             <ul class="sous">
-                <li><a th:href="@{/plan}" href="plan.html">Afficher le plan et le taux d'occupation</a></li>
+                <li><a th:href="@{/plan}" href="plan.html">Afficher le plan</a></li>
                 <li><a th:href="@{/itineraire}" href="itineraire.html">Rechercher un itinéraire</a></li>
                 <li><a th:href="@{/planDonnees}" href="planDonnees.html">Affichage du plan avec les Données</a></li>
             </ul></li>
@@ -90,9 +90,13 @@
     <area target="" alt="connectedHealthLab" title="connectedHealthLab" href="" coords="12292,4841,13013,4807,13539,6045,13174,5994,12950,5996,12752,5982" shape="poly">
 </map>
 
-<script th:inline="javascript">
-    var personnesParSalle = [[${personnesParSalle}]];
-</script>    
+<script type="text/javascript" th:inline="javascript">
+    /*<![CDATA[*/
+        let maxPer = /*[[${maxPer}]]*/;
+        let personnesSalle = /*[[${personnesSalle}]]*/;
+        let salles = /*[[${salles}]]*/;
+    /*]]>*/
+</script>
 <script th:src="@{/javascript/planDonnees.js}" src="../static/javascript/planDonnees.js"></script>
 </body>
 </html>

@@ -50,22 +50,26 @@ public class SiteController {
     
     @GetMapping(path = "/planDonnees")
     public String afficheLePlanDeDonnees(Model model) {
-        HashMap<String,List<Integer>> hm = new HashMap<>();
-        List<Integer> l = new LinkedList<>();
+        List<String> salles = new LinkedList<>();
+        List<Integer> personnesSalle = new LinkedList<>();
+        List<Integer> maxPer = new LinkedList<>();
+        
         List<Passage> passages = new LinkedList<>();
         passages = passageDAO.findAll();
+        
         List<Balise> balises = new LinkedList<>();
         balises = baliseDAO.findAll();
         for(Passage p : passages){
             p.addPassageDansBalise();
         }
         for(Balise b : balises){
-            int NbPer = b.getNbPersonneDansChaqueSalle();
-            l.add(NbPer);
-            l.add(b.getSalle().getMaxPer());
-            hm.put(b.getSalle().getNum(), l);  
+            salles.add(b.getSalle().getNum());
+            maxPer.add(b.getSalle().getMaxPer());
+            personnesSalle.add(b.getNbPersonneDansChaqueSalle());
         }
-        model.addAttribute("personnesParSalles", hm);
+        model.addAttribute("maxPer", maxPer);
+        model.addAttribute("salles", salles);
+        model.addAttribute("personnesSalle", personnesSalle);
         return "planDonnees";
     }
     
