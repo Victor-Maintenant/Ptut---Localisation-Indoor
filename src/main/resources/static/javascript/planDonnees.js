@@ -18,20 +18,23 @@ $('#mybtn').click(function(){
 if (urlParams.has('salle') === true){ 
     console.log(urlParams.get('salle'))
     // select all New England states
-    $('img').mapster('set',true,urlParams.get('salle'));
+    $('img').mapster('set',true,urlParams.get('salle'),{fillColor:'0000ff'});
 }
 
-console.log(personnesSalle);
-console.log(salles);
-console.log(maxPer);
-for(let i = 0; i < salles.length; i++){
-    if(personnesSalle[i] <= maxPer[i]*0.6){
-        $('img').mapster('set',true,salles[i],{fillColor:'00ff00'});
-    }
-    else if(personnesSalle[i] <= maxPer[i]*0.8){
-        $('img').mapster('set',true,salles[i],{fillColor:'ffff00'});
-    }
-    else{
-        $('img').mapster('set',true,salles[i],{fillColor:'ff0000'});
-    }
+
+if (urlParams.has('salle') === false){ 
+    console.log(personnesSalle);
+    console.log(salles);
+    console.log(maxPer);
+    for(let i = 0; i < salles.length; i++){
+        if(personnesSalle[i] <= maxPer[i]*0.6){
+            $('img').mapster('set',true,salles[i],{fillColor:'00ff00'});
+        }
+        else if(personnesSalle[i] <= maxPer[i]*0.8){
+            $('img').mapster('set',true,salles[i],{fillColor:'ffff00'});
+        }
+        else{
+            $('img').mapster('set',true,salles[i],{fillColor:'ff0000'});
+        }
+}
 }
